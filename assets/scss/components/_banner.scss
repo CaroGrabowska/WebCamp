@@ -1,0 +1,34 @@
+// =========================
+// BANNER
+// =========================
+
+.banner {
+  &__link {
+    @include position-flex(column, center, center);
+    @include size-min(false, 120px);
+    @include padding(15px, 15px, 15px, 15px);
+    @include background-color(map_get($grey-scale-colors, grey-100));
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include size-min(false, 300px);
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include size-min(false, 350px);
+    }
+
+    @include media-query(min, map_get($breakpoints, extra-xl)) {
+      @include size-min(false, 450px);
+    }
+  }
+
+  &__desciption {
+    @include font-structure(map_get($font-family, regular), font-in-rem(12px), 300);
+    @include font-skin(map_get($black-scale-colors, black-100), 3.5px, uppercase);
+    text-align: center;
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      font-size: font-in-rem(16px);
+    }
+  }
+}

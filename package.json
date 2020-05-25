@@ -9,10 +9,10 @@
     "styles:watch": "gulp styles:watch",
     "scripts:compile": "gulp scripts:compile",
     "scripts:watch": "gulp scripts:watch",
-    "lint:styles": "stylelint /assets/scss/**/*.{scss,css,sass} --config .stylelintrc.js",
-    "lint:styles:fix": "stylelint /assets/scss/**/*.{scss,css,sass} --fix",
-    "lint:scripts": "eslint /assets/js",
-    "lint:scripts:fix": "eslint --fix /assets/js"
+    "lint:styles": "stylelint assets/scss/**/*.{scss,css,sass} --config .stylelintrc.js",
+    "lint:styles:fix": "stylelint assets/scss/**/*.{scss,css,sass} --fix",
+    "lint:scripts": "eslint assets/js",
+    "lint:scripts:fix": "eslint --fix assets/js"
   },
   "repository": {
     "type": "git",

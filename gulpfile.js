@@ -6,7 +6,6 @@
  * npm install gulp gulp-if gulp-rename gulp-debug gulp-sass node-sass-tilde-importer gulp-autoprefixer gulp-babel @babel/core @babel/preset-env gulp-babel-minify --save-dev
  */
 
-
 const { src, dest, task, series, watch } = require('gulp');
 const gulpif = require('gulp-if');
 const rename = require('gulp-rename');
@@ -15,7 +14,7 @@ const sass = require('gulp-sass');
 const tildeImporter = require('node-sass-tilde-importer');
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
-const babelMinify = require("gulp-babel-minify");
+const babelMinify = require('gulp-babel-minify');
 
 
 // ===============================

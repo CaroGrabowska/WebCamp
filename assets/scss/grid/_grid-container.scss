@@ -1,0 +1,16 @@
+// =========================
+// GRID CONTAINER
+// =========================
+
+.wc-container {
+  @include padding(0, 0.2rem, 0, 0.2rem);
+  @include margin(0, auto, 0, auto);
+
+  @include media-query(min, map_get($breakpoints, xl)) {
+    @include size-max(1280px, false);
+  }
+
+  @include media-query(min, map_get($breakpoints, extra-xl)) {
+    @include size-max(1640px, false);
+  }
+}

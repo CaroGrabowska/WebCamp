@@ -1,0 +1,62 @@
+// =========================
+// GRID ELEMENTS
+// =========================
+
+// COL-XS
+
+.wc-col-xs-6 {
+  flex-basis: 50%;
+  box-sizing: border-box;
+  max-width: 50%;
+
+  @include margin(0.5rem, 0, 0, 0);
+  @include padding(0, 5px, 0, 5px);
+}
+
+// COL-SM
+
+.wc-col-sm-6 {
+  @include media-query(min, map_get($breakpoints, sm)) {
+    flex-basis: 50%;
+    box-sizing: border-box;
+    max-width: 50%;
+  }
+}
+
+// COL-MD
+
+.wc-col-md-6 {
+  @include media-query(min, map_get($breakpoints, md)) {
+    flex-basis: 50%;
+    box-sizing: border-box;
+    max-width: 50%;
+
+    @include padding(0, 5px, 0, 5px);
+  }
+}
+
+// COL-LG
+
+.wc-col-lg-4 {
+  @include media-query(min, map_get($breakpoints, lg)) {
+    flex-basis: 33.33333333%;
+    box-sizing: border-box;
+    max-width: 33.33333333%;
+
+    @include padding(0, 10px, 0, 10px);
+    @include margin(1rem, 0, 0, 0);
+  }
+}
+
+// COL-XL
+
+.wc-col-xl-4 {
+  @include media-query(min, map_get($breakpoints, xl)) {
+    flex-basis: 33.33333333%;
+    box-sizing: border-box;
+    max-width: 33.33333333%;
+
+    @include padding(0, 10px, 0, 10px);
+    @include margin(1rem, 0, 0, 0);
+  }
+}

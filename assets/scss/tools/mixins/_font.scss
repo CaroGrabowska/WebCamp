@@ -3,7 +3,7 @@
 // =========================
 
 @mixin font-structure($font-family, $size: false, $weight: false) {
-  font-family: $font-family;
+  font-family: $font-family, sans-serif;
 
   @if $size {
     font-size: $size;
@@ -14,7 +14,7 @@
   }
 }
 
-@mixin font-skin($color: false,$letter-spacing: false, $text-transform: false ) {
+@mixin font-skin($color: false, $letter-spacing: false, $text-transform: false) {
   @if $color {
     color: $color;
   }
