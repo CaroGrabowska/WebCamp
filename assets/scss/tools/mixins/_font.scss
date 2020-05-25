@@ -1,0 +1,44 @@
+//=========================
+// FONT
+// =========================
+
+@mixin font-structure($font-family, $size: false, $weight: false) {
+  font-family: $font-family;
+
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+@mixin font-skin($color: false,$letter-spacing: false, $text-transform: false ) {
+  @if $color {
+    color: $color;
+  }
+
+  @if $letter-spacing {
+    letter-spacing: $letter-spacing;
+  }
+
+  @if $text-transform {
+    text-transform: $text-transform;
+  }
+}
+
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin multiLineTruncate() {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin: 5px 0;
+}
