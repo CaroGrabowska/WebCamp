@@ -3,6 +3,7 @@
 // =========================
 
 .banner {
+
   &__link {
     @include position-flex(column, center, center);
     @include size-min(false, 120px);
@@ -25,6 +26,7 @@
   &__desciption {
     @include font-structure(map_get($font-family, regular), font-in-rem(12px), 300);
     @include font-skin(map_get($black-scale-colors, black-100), 3.5px, uppercase);
+
     text-align: center;
 
     @include media-query(min, map_get($breakpoints, lg)) {
