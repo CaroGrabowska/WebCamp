@@ -57,6 +57,16 @@
       }
     }
   }
+
+  &--slider {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, 430px);
+    @include background-color(map_get($grey-scale-colors, grey-200));
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include size-custom(100%, 520px);
+    }
+  }
 }
 
 .newsletter {

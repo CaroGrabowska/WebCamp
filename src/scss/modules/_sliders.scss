@@ -5,15 +5,28 @@
 .slider {
   $self: &;
 
+  &__single {
+    @include position-flex(column, center, center);
+  }
+
+  &__navigation {
+    &::after {
+      font-size: px-to-rem(16px);
+      color: map_get($grey-scale-colors, grey-300);
+
+      @include media-query(min, map_get($breakpoints, xl)) {
+        font-size: px-to-rem(32px);
+        font-weight: 900;
+        color: map_get($white-scale-colors, white-100);
+      }
+    }
+  }
+
   &--benefits {
     @include margin(25px, 10px, 25px, 10px);
 
     @include media-query(min, map_get($breakpoints, lg)) {
       @include margin(45px, 10px, 55px, 10px);
-    }
-
-    #{ $self }__single {
-      @include position-flex(column, center, center);
     }
 
     #{ $self }__link {
@@ -38,16 +51,54 @@
 
       object-fit: contain;
     }
+  }
+
+  &--brands {
+    @include margin(25px, 10px, 25px, 10px);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include margin(45px, 10px, 55px, 10px);
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include size-max(1280px, auto);
+      @include margin(30px, auto, 30px, auto);
+    }
+
+    @include media-query(min, map_get($breakpoints, extra-xl)) {
+      @include size-max(1640px, auto);
+    }
+
+    #{ $self }__single {
+      @include size-custom(120px, auto);
+    }
+
+    #{ $self }__link {
+      @include position-flex(column, center, center);
+      @include size-custom(100%, 100%);
+    }
+
+    #{ $self }__img {
+      @include size-custom(110px, auto);
+
+      object-fit: contain;
+    }
 
     #{ $self }__navigation {
       &::after {
-        font-size: px-to-rem(16px);
-        color: map_get($grey-scale-colors, grey-300);
-
         @include media-query(min, map_get($breakpoints, xl)) {
-          font-size: px-to-rem(32px);
-          font-weight: 900;
-          color: map_get($white-scale-colors, white-100);
+          color: map_get($grey-scale-colors, grey-300);
+        }
+      }
+      &--prev {
+        @include media-query(max, map_get($breakpoints, lg)) {
+          left: -10px;
+        }
+      }
+
+      &--next {
+        @include media-query(max, map_get($breakpoints, lg)) {
+          right: -10px;
         }
       }
     }
