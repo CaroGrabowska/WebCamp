@@ -29,6 +29,14 @@
       line-height: px-to-rem(32px);
     }
   }
+
+  &--secondary {
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include font-structure(map_get($font-family, semi-bold), px-to-rem(25px), 300);
+
+      line-height: px-to-rem(27px);
+    }
+  }
 }
 
 .t-skin {

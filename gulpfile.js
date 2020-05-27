@@ -28,7 +28,7 @@ const PATHS = {
     dest: `${PATH_BASE}/dist/css`,
   },
   scripts: {
-    watch: `${PATH_BASE}/src/js/**/*.js`,
+    watch: [`${PATH_BASE}/src/js/**/*.js`, 'node_modules/swiper/js/swiper.js'],
     dest: `${PATH_BASE}/dist/js`,
   },
 };

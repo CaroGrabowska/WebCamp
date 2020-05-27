@@ -24,9 +24,11 @@
 @import 'grid/grid-row';
 @import 'grid/grid-elements';
 
-// =========================
-// VENDORS
-// =========================
+// ===============================
+// #VENDORS
+// ===============================
+
+@import 'vendors/_swiper';
 
 // =========================
 // COMPONENTS
@@ -43,6 +45,7 @@
 
 @import 'modules/banner';
 @import 'modules/footer';
+@import 'modules/sliders';
 
 // =========================
 // LAYOUT

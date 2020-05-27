@@ -1,0 +1,55 @@
+// ===============================
+// #SLIDERS
+// ===============================
+
+.slider {
+  $self: &;
+
+  &--benefits {
+    @include margin(25px, 10px, 25px, 10px);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include margin(45px, 10px, 55px, 10px);
+    }
+
+    #{ $self }__single {
+      @include position-flex(column, center, center);
+    }
+
+    #{ $self }__link {
+      @include position-flex(column, center, center);
+      @include size-custom(250px, 250px);
+
+      @include media-query(min, map_get($breakpoints, lg)) {
+        @include size-custom(350px, 300px);
+      }
+
+      @include media-query(min, map_get($breakpoints, xl)) {
+        @include size-custom(450px, 400px);
+      }
+
+      @include media-query(min, map_get($breakpoints, extra-xl)) {
+        @include size-custom(500px, 525px);
+      }
+    }
+
+    #{ $self }__img {
+      @include size-custom(100%, 100%);
+
+      object-fit: contain;
+    }
+
+    #{ $self }__navigation {
+      &::after {
+        font-size: px-to-rem(16px);
+        color: map_get($grey-scale-colors, grey-300);
+
+        @include media-query(min, map_get($breakpoints, xl)) {
+          font-size: px-to-rem(32px);
+          font-weight: 900;
+          color: map_get($white-scale-colors, white-100);
+        }
+      }
+    }
+  }
+}

@@ -7,7 +7,6 @@
   &__link {
     @include position-flex(column, center, center);
     @include size-min(false, 120px);
-    @include padding(15px, 15px, 15px, 15px);
     @include background-color(map_get($grey-scale-colors, grey-100));
 
     @include media-query(min, map_get($breakpoints, lg)) {
@@ -25,7 +24,7 @@
 
   &__img {
     @include size-max(100%, false);
-    @include size-custom(false, auto);
+    @include size-custom(100%, auto);
   }
 
   &__desciption {
@@ -51,11 +50,10 @@
     #{ $self }__link {
       @include position-flex(column, center, center);
       @include size-min(false, 120px);
-      @include padding(15px, 15px, 15px, 15px);
       @include background-color(map_get($grey-scale-colors, grey-100));
 
       @include media-query(min, map_get($breakpoints, lg)) {
-        @include size-min(false, 300px);
+        @include size-min(false, 200px);
       }
     }
   }
@@ -91,11 +89,24 @@
 
 .benefits {
   &__title {
-    @include margin(20px, 15px, 20px, 15px);
+    @include margin(30px, 10px, 30px, 10px);
 
     @include media-query(min, map_get($breakpoints, lg)) {
       @include margin(40px, auto, 40px, auto);
     }
+  }
+
+  &__social {
+    @include position-flex(row, center, center);
+    @include size-custom(100%, false);
+  }
+
+  &__link {
+    @include margin(0, 15px, 0, 15px);
+  }
+
+  &__img {
+    @include size-custom(40px, 40px);
   }
 
   &__description {
@@ -104,7 +115,7 @@
     @include media-query(min, map_get($breakpoints, lg)) {
       @include size-max(1360px, false);
       @include padding(30px, 30px, 30px, 30px);
-      @include margin(0, auto, 0, auto);
+      @include margin(15px, auto, 15px, auto);
     }
   }
 }
