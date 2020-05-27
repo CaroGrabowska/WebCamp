@@ -39,5 +39,7 @@ module.exports = {
         functions: 'ignore',
       },
     ],
+    'no-unused-vars': 'off',
+    'no-undef': 'off',
   },
 };

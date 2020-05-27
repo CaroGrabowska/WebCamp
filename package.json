@@ -11,8 +11,8 @@
     "scripts:watch": "gulp scripts:watch",
     "lint:styles": "stylelint src/scss/**/*.{scss,css,sass} --config .stylelintrc.js",
     "lint:styles:fix": "stylelint src/scss/**/*.{scss,css,sass} --fix",
-    "lint:scripts": "eslint assets/js",
-    "lint:scripts:fix": "eslint --fix assets/js"
+    "lint:scripts": "eslint src/js",
+    "lint:scripts:fix": "eslint --fix src/js"
   },
   "repository": {
     "type": "git",
