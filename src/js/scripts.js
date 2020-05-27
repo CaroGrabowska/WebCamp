@@ -12,9 +12,9 @@
       toggle.emitterEl.forEach((emitter) =>
         emitter.addEventListener('click', (e) => {
           let emitter = e.target;
-
           if (emitter.classList.contains(toggle.emitter)) {
             let absorber = emitter.parentElement.querySelector(toggle.absorber);
+
             absorber.classList.toggle(toggle.class);
           }
         })
