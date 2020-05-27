@@ -1,0 +1,9 @@
+// =========================
+// STATES - DISPLAY NONE
+// =========================
+
+.js-hidden {
+  @include media-query(max, map_get($breakpoints, md)) {
+    display: none;
+  }
+}

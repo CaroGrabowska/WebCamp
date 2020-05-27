@@ -16,7 +16,6 @@ const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const babelMinify = require('gulp-babel-minify');
 
-
 // ===============================
 // # SETTINGS
 // ===============================
@@ -25,15 +24,14 @@ const DEVELOPMENT = (process.env.NODE_ENV || 'production') === 'development';
 const PATH_BASE = '.';
 const PATHS = {
   styles: {
-    watch: `${PATH_BASE}/assets/scss/**/*.{scss,css}`,
+    watch: `${PATH_BASE}/src/scss/**/*.{scss,css}`,
     dest: `${PATH_BASE}/dist/css`,
   },
   scripts: {
-    watch: `${PATH_BASE}/assets/js/**/*.js`,
+    watch: `${PATH_BASE}/src/js/**/*.js`,
     dest: `${PATH_BASE}/dist/js`,
   },
 };
-
 
 // ===============================
 // # FUNCTIONS
@@ -42,32 +40,33 @@ const PATHS = {
 const stylesCompile = () => {
   return src(PATHS.styles.watch, { sourcemaps: DEVELOPMENT })
     .pipe(rename({ suffix: '.min' }))
-    .pipe(sass({
-      outputStyle: DEVELOPMENT ? 'expanded' : 'compressed',
-      importer: tildeImporter
-    }).on('error', sass.logError))
+    .pipe(
+      sass({
+        outputStyle: DEVELOPMENT ? 'expanded' : 'compressed',
+        importer: tildeImporter,
+      }).on('error', sass.logError)
+    )
     .pipe(autoprefixer({ browsers: ['> 5%', 'Safari >= 8', 'Explorer >= 10'] }))
     .pipe(dest(PATHS.styles.dest, { sourcemaps: DEVELOPMENT }))
     .pipe(debug({ title: 'SCSS - compile:', showCount: false }));
-}
+};
 
 const stylesWatch = () => {
   return watch(PATHS.styles.watch, stylesCompile);
-}
+};
 
 const scriptsCompile = () => {
   return src(PATHS.scripts.watch, { sourcemaps: DEVELOPMENT })
     .pipe(rename({ suffix: '.min' }))
     .pipe(babel({ presets: ['@babel/env'] }))
-    .pipe(gulpif(!DEVELOPMENT, babelMinify({ mangle: { keepClassName: true }, builtIns: false, })))
+    .pipe(gulpif(!DEVELOPMENT, babelMinify({ mangle: { keepClassName: true }, builtIns: false })))
     .pipe(dest(PATHS.scripts.dest, { sourcemaps: DEVELOPMENT }))
     .pipe(debug({ title: 'JS - compile:', showCount: false }));
-}
+};
 
 const scriptsWatch = () => {
   return watch(PATHS.scripts.watch, scriptsCompile);
-}
-
+};
 
 // ===============================
 // # TASKS
