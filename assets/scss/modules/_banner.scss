@@ -3,6 +3,7 @@
 // =========================
 
 .banner {
+
   &__link {
     @include position-flex(column, center, center);
     @include size-min(false, 120px);

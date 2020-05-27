@@ -21,6 +21,7 @@
 
     @include media-query(min, map_get($breakpoints, lg)) {
       @include position-flex(column, center, center);
+
       display: block;
     }
   }

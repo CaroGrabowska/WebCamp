@@ -56,12 +56,13 @@ input,
 textarea,
 span,
 select {
+
   &:focus {
     outline: none;
   }
 
   .accessibility &:focus {
-    outline: 2px solid #0000ff;
+    outline: 2px solid #0000FF;
     outline-offset: 2px;
   }
 }
