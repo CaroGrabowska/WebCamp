@@ -11,7 +11,7 @@
     #{ $self }__title {
       @include size-custom(100%, false);
       @include margin(5px, 0, 10px, 0);
-      @include font-structure(map_get($font-family, semi-bold), font-in-rem(14px), 500);
+      @include font-structure(map_get($font-family, semi-bold), px-to-rem(14px), 500);
       @include font-skin(map_get($white-scale-colors, white-100), 3.5px, uppercase);
     }
   }

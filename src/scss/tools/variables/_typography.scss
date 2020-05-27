@@ -3,20 +3,15 @@
 // =========================
 
 $font-family: (
-  regular: "Cabin-Regular",
-  medium: "Cabin-Medium",
-  semi-bold: "Cabin-SemiBold",
-  bold: "Cabin-Bold",
-);
-
-$font-size: (
-  "xxs": 13px,
-  "xs": 16px,
+  regular: 'Cabin-Regular',
+  medium: 'Cabin-Medium',
+  semi-bold: 'Cabin-SemiBold',
+  bold: 'Cabin-Bold',
 );
 
 $font-weight: (
-  "normal": 400,
-  "medium": 500,
-  "semi-bold": 700,
-  "bold": 900,
+  'normal': 400,
+  'medium': 500,
+  'semi-bold': 700,
+  'bold': 900,
 );

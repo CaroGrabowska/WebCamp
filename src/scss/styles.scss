@@ -4,25 +4,25 @@
 // TOOLS
 // =========================
 
-@import "tools/functions";
-@import "tools/mixins";
-@import "tools/variables";
-@import "tools/placeholders";
+@import 'tools/functions';
+@import 'tools/mixins';
+@import 'tools/variables';
+@import 'tools/placeholders';
 
 // =========================
 // BASE
 // =========================
 
-@import "base/base";
-@import "base/normalize";
+@import 'base/base';
+@import 'base/normalize';
 
 // =========================
 // GRID
 // =========================
 
-@import "grid/grid-container";
-@import "grid/grid-row";
-@import "grid/grid-elements";
+@import 'grid/grid-container';
+@import 'grid/grid-row';
+@import 'grid/grid-elements';
 
 // =========================
 // VENDORS
@@ -32,17 +32,17 @@
 // COMPONENTS
 // =========================
 
-@import "components/buttons";
-@import "components/typography";
-@import "components/lists";
-@import "components/box";
+@import 'components/buttons';
+@import 'components/typography';
+@import 'components/lists';
+@import 'components/box';
 
 // =========================
 // MODULES
 // =========================
 
-@import "modules/banner";
-@import "modules/footer";
+@import 'modules/banner';
+@import 'modules/footer';
 
 // =========================
 // LAYOUT
@@ -56,4 +56,4 @@
 // STATE
 // =========================
 
-@import "states/hidden";
+@import 'states/hidden';

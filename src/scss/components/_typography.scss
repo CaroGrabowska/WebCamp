@@ -2,49 +2,54 @@
 // TYPOGRAPHY
 // =========================
 
-.t-structure {
-
+.t-structure-sm {
   &--primary {
-    @include font-structure(map_get($font-family, regular), font-in-rem(20px), 300);
+    @include font-structure(map_get($font-family, regular), px-to-rem(20px), 300);
 
-    line-height: 1.5rem;
-
-    @include media-query(min, map_get($breakpoints, lg)) {
-      font-size: font-in-rem(25px);
-      line-height: 2rem;
-    }
+    line-height: px-to-rem(25px);
   }
 
   &--secondary {
-    @include font-structure(map_get($font-family, regular), font-in-rem(20px), 300);
+    @include font-structure(map_get($font-family, regular), px-to-rem(15px), 300);
 
-    line-height: 1.5rem;
+    line-height: px-to-rem(25px);
+  }
+
+  &--tertiary {
+    @include font-structure(map_get($font-family, semi-bold), px-to-rem(20px), 300);
+
+    line-height: px-to-rem(27px);
+  }
+}
+
+.t-structure-xl {
+  &--primary {
+    @include media-query(min, map_get($breakpoints, lg)) {
+      font-size: px-to-rem(25px);
+      line-height: px-to-rem(32px);
+    }
   }
 }
 
 .t-skin {
-
   &--primary {
     @include font-skin(map_get($black-scale-colors, black-100), false, false);
   }
 }
 
 .t-transform {
-
   &--uppercase {
     text-transform: uppercase;
   }
 }
 
 .t-spacing {
-
   &--100 {
-    letter-spacing: 3px;
+    letter-spacing: 5px;
   }
 }
 
 .t-position {
-
   &--center {
     text-align: center;
   }

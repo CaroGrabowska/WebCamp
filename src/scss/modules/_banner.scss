@@ -3,7 +3,7 @@
 // =========================
 
 .banner {
-
+  $self: &;
   &__link {
     @include position-flex(column, center, center);
     @include size-min(false, 120px);
@@ -29,7 +29,7 @@
   }
 
   &__desciption {
-    @include font-structure(map_get($font-family, regular), font-in-rem(12px), 300);
+    @include font-structure(map_get($font-family, regular), px-to-rem(12px), 300);
     @include font-skin(map_get($black-scale-colors, black-100), 3.5px, uppercase);
 
     text-align: center;
@@ -45,7 +45,19 @@
 
   &--newsletter {
     @include background-color(map_get($grey-scale-colors, grey-200));
-    @include margin(20px, 0, 0, 0);
+  }
+
+  &--benefits {
+    #{ $self }__link {
+      @include position-flex(column, center, center);
+      @include size-min(false, 120px);
+      @include padding(15px, 15px, 15px, 15px);
+      @include background-color(map_get($grey-scale-colors, grey-100));
+
+      @include media-query(min, map_get($breakpoints, lg)) {
+        @include size-min(false, 300px);
+      }
+    }
   }
 }
 
@@ -60,7 +72,7 @@
 
   &__content {
     @include position-flex(column, center, center);
-    @include size-max(250px, false);
+    @include size-max(280px, false);
 
     @include media-query(min, map_get($breakpoints, lg)) {
       @include size-max(100%, false);
@@ -74,5 +86,25 @@
   &__button {
     @include position-flex(column, center, center);
     @include margin(25px, 0, 10px, 0);
+  }
+}
+
+.benefits {
+  &__title {
+    @include margin(20px, 15px, 20px, 15px);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include margin(40px, auto, 40px, auto);
+    }
+  }
+
+  &__description {
+    @include padding(30px, 10px, 30px, 10px);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include size-max(1360px, false);
+      @include padding(30px, 30px, 30px, 30px);
+      @include margin(0, auto, 0, auto);
+    }
   }
 }
