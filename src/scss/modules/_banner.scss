@@ -4,6 +4,7 @@
 
 .banner {
   $self: &;
+
   &__link {
     @include position-flex(column, center, center);
     @include size-min(false, 120px);
@@ -98,6 +99,7 @@
 }
 
 .benefits {
+
   &__title {
     @include margin(30px, 10px, 30px, 10px);
 

@@ -10,6 +10,7 @@
   }
 
   &__navigation {
+
     &::after {
       font-size: px-to-rem(16px);
       color: map_get($grey-scale-colors, grey-300);
@@ -85,11 +86,13 @@
     }
 
     #{ $self }__navigation {
+
       &::after {
         @include media-query(min, map_get($breakpoints, xl)) {
           color: map_get($grey-scale-colors, grey-300);
         }
       }
+
       &--prev {
         @include media-query(max, map_get($breakpoints, lg)) {
           left: -10px;

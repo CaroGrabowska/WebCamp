@@ -3,6 +3,7 @@
 // =========================
 
 .t-structure-sm {
+
   &--primary {
     @include font-structure(map_get($font-family, regular), px-to-rem(20px), 300);
 
@@ -23,6 +24,7 @@
 }
 
 .t-structure-xl {
+
   &--primary {
     @include media-query(min, map_get($breakpoints, lg)) {
       font-size: px-to-rem(25px);
@@ -40,24 +42,28 @@
 }
 
 .t-skin {
+
   &--primary {
     @include font-skin(map_get($black-scale-colors, black-100), false, false);
   }
 }
 
 .t-transform {
+
   &--uppercase {
     text-transform: uppercase;
   }
 }
 
 .t-spacing {
+
   &--100 {
     letter-spacing: 5px;
   }
 }
 
 .t-position {
+
   &--center {
     text-align: center;
   }

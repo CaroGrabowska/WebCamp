@@ -169,14 +169,14 @@ dfn {
 
 h1 {
   font-size: 2em;
-  margin: .67em 0;
+  margin: 0.67em 0;
 }
 
 @if $legacy_browser_support {
 
   h2 {
     font-size: 1.5em;
-    margin: .83em 0;
+    margin: 0.83em 0;
   }
 
   h3 {
@@ -190,12 +190,12 @@ h1 {
   }
 
   h5 {
-    font-size: .83em;
+    font-size: 0.83em;
     margin: 1.67em 0;
   }
 
   h6 {
-    font-size: .67em;
+    font-size: 0.67em;
     margin: 2.33em 0;
   }
 }
@@ -260,11 +260,11 @@ sup {
 }
 
 sup {
-  top: -.5em;
+  top: -0.5em;
 }
 
 sub {
-  bottom: -.25em;
+  bottom: -0.25em;
 }
 
 @if $legacy_browser_support {
@@ -536,7 +536,7 @@ input[ type = "search" ]::-webkit-search-decoration {
 fieldset {
   border: 1px solid #C0C0C0;
   margin: 0 2px;
-  padding: .35em .625em .75em;
+  padding: 0.35em 0.625em 0.75em;
 }
 
 /**
