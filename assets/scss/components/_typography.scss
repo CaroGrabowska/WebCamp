@@ -1,0 +1,44 @@
+// =========================
+// TYPOGRAPHY
+// =========================
+
+.t-structure {
+  &--primary {
+    @include font-structure(map_get($font-family, regular), font-in-rem(20px), 300);
+    line-height: 1.5rem;
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      font-size: font-in-rem(25px);
+      line-height: 2rem;
+    }
+  }
+
+  &--secondary {
+    @include font-structure(map_get($font-family, regular), font-in-rem(20px), 300);
+    line-height: 1.5rem;
+  }
+}
+
+.t-skin {
+  &--primary {
+    @include font-skin(map_get($black-scale-colors, black-100), false, false);
+  }
+}
+
+.t-transform {
+  &--uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.t-spacing {
+  &--100 {
+    letter-spacing: 3px;
+  }
+}
+
+.t-position {
+  &--center {
+    text-align: center;
+  }
+}

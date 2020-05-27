@@ -3,7 +3,6 @@
 // =========================
 
 .banner {
-
   &__link {
     @include position-flex(column, center, center);
     @include size-min(false, 120px);
@@ -23,6 +22,11 @@
     }
   }
 
+  &__img {
+    @include size-max(100%, false);
+    @include size-custom(false, auto);
+  }
+
   &__desciption {
     @include font-structure(map_get($font-family, regular), font-in-rem(12px), 300);
     @include font-skin(map_get($black-scale-colors, black-100), 3.5px, uppercase);
@@ -32,5 +36,42 @@
     @include media-query(min, map_get($breakpoints, lg)) {
       font-size: font-in-rem(16px);
     }
+  }
+
+  &--advertisment {
+    @include background-color(map_get($white-scale-colors, white-100));
+  }
+
+  &--newsletter {
+    @include background-color(map_get($grey-scale-colors, grey-200));
+    @include margin(20px, 0, 0, 0);
+  }
+}
+
+.newsletter {
+  @include position-flex(column, center, center);
+  @include size-max(100%, false);
+  @include padding(20px, 10px, 20px, 10px);
+
+  @include media-query(min, map_get($breakpoints, lg)) {
+    @include size-min(false, 180px);
+  }
+
+  &__content {
+    @include position-flex(column, center, center);
+    @include size-max(250px, false);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include size-max(100%, false);
+    }
+
+    span {
+      @include margin(2px, 0, 2px, 0);
+    }
+  }
+
+  &__button {
+    @include position-flex(column, center, center);
+    @include margin(25px, 0, 10px, 0);
   }
 }

@@ -1,0 +1,69 @@
+// =========================
+// FOOTER
+// =========================
+
+.footer {
+  @include position-flex(column, center, center);
+  @include background-color(map_get($black-scale-colors, black-200));
+
+  &__nav {
+    @include size-custom(100%, false);
+    @include padding(20px, 0, 20px, 0);
+    @include background-color(map_get($black-scale-colors, black-200));
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include size-max(1200px, false);
+      @include padding(35px, 0, 35px, 0);
+    }
+  }
+
+  &__social {
+    @include size-custom(100%, false);
+    @include padding(25px, 0, 25px, 0);
+    @include background-color(map_get($white-scale-colors, white-100));
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(column, center, center);
+      @include padding(25px, 0, 25px, 0);
+    }
+
+    .social {
+      @include media-query(min, map_get($breakpoints, lg)) {
+        @include position-flex(row, center, center);
+        @include size-custom(100%, false);
+        @include size-max(1200px, false);
+      }
+    }
+  }
+
+  &__payment {
+    display: none;
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(column, center, center);
+      @include size-custom(100%, false);
+      @include padding(30px, 0, 30px, 0);
+      @include margin(-10px, 0, 0, 0);
+      @include background-color(map_get($white-scale-colors, white-100));
+
+      img {
+        @include size-max(900px, false);
+      }
+    }
+  }
+}
+
+.logo {
+  @include position-flex(column, center, center);
+  @include size-custom(100%, false);
+
+  @include media-query(min, map_get($breakpoints, lg)) {
+    @include position-flex(column, flex-end, center);
+    @include size-custom(50%, false);
+  }
+
+  &__img {
+    @include size-custom(120px, auto);
+    @include padding(0, 15px, 0, 15px);
+  }
+}

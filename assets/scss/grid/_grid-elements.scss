@@ -13,6 +13,15 @@
   @include padding(0, 5px, 0, 5px);
 }
 
+.wc-col-xs-12 {
+  flex-basis: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+
+  @include margin(0.5rem, 0, 0, 0);
+  @include padding(0, 5px, 0, 5px);
+}
+
 // COL-SM
 
 .wc-col-sm-6 {
@@ -20,6 +29,14 @@
     flex-basis: 50%;
     box-sizing: border-box;
     max-width: 50%;
+  }
+}
+
+.wc-col-sm-12 {
+  @include media-query(min, map_get($breakpoints, sm)) {
+    flex-basis: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
   }
 }
 
@@ -37,6 +54,17 @@
 
 // COL-LG
 
+.wc-col-lg-3 {
+  @include media-query(min, map_get($breakpoints, lg)) {
+    flex-basis: 25%;
+    box-sizing: border-box;
+    max-width: 25%;
+
+    @include padding(0, 10px, 0, 10px);
+    @include margin(1rem, 0, 0, 0);
+  }
+}
+
 .wc-col-lg-4 {
   @include media-query(min, map_get($breakpoints, lg)) {
     flex-basis: 33.33333333%;
@@ -49,6 +77,17 @@
 }
 
 // COL-XL
+
+.wc-col-xl-3 {
+  @include media-query(min, map_get($breakpoints, xl)) {
+    flex-basis: 25%;
+    box-sizing: border-box;
+    max-width: 25%;
+
+    @include padding(0, 10px, 0, 10px);
+    @include margin(1rem, 0, 0, 0);
+  }
+}
 
 .wc-col-xl-4 {
   @include media-query(min, map_get($breakpoints, xl)) {

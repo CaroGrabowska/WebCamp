@@ -1,0 +1,21 @@
+// =========================
+// BUTTONS
+// =========================
+
+.button-skin {
+  @include border(all, 2px, solid, map_get($black-scale-colors, black-200));
+
+  &--primary {
+    @include background-color(map_get($black-scale-colors, black-200));
+    @include font-structure(map_get($font-family, bold), font-in-rem(13px), 700);
+    @include font-skin(map_get($white-scale-colors, white-100), 0.8px, uppercase);
+    @include transition(all, 0.3s, ease-in-out);
+  }
+}
+
+.button-structure {
+  @include position-flex(column, center, center);
+  @include padding(10px, 30px, 10px, 30px);
+
+  cursor: pointer;
+}

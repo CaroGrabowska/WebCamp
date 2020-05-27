@@ -3,7 +3,6 @@
 // =========================
 
 .wc-container {
-  @include padding(0, 0.2rem, 0, 0.2rem);
   @include margin(0, auto, 0, auto);
 
   @include media-query(min, map_get($breakpoints, xl)) {

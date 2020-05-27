@@ -1,0 +1,27 @@
+// =========================
+// BOX
+// =========================
+
+.box {
+  $self: &;
+
+  &--footer {
+    @include padding(5px, 10px, 5px, 10px);
+
+    #{ $self }__title {
+      @include size-custom(100%, false);
+      @include margin(5px, 0, 10px, 0);
+      @include font-structure(map_get($font-family, semi-bold), font-in-rem(14px), 500);
+      @include font-skin(map_get($white-scale-colors, white-100), 3.5px, uppercase);
+    }
+  }
+
+  &--social {
+    display: none;
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(column, center, center);
+      display: block;
+    }
+  }
+}

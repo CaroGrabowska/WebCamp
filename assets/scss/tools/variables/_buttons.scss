@@ -1,3 +1,9 @@
 // =========================
 // BUTTONS
 // =========================
+
+$buttons: (
+  "primary": (
+    "color": map_get($black-scale-colors, black-100),
+  ),
+);

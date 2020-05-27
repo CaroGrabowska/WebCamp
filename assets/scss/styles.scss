@@ -32,7 +32,17 @@
 // COMPONENTS
 // =========================
 
-@import "components/banner";
+@import "components/buttons";
+@import "components/typography";
+@import "components/lists";
+@import "components/box";
+
+// =========================
+// MODULES
+// =========================
+
+@import "modules/banner";
+@import "modules/footer";
 
 // =========================
 // LAYOUT

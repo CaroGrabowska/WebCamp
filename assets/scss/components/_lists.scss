@@ -1,0 +1,56 @@
+// =========================
+// LISTS
+// =========================
+
+.list {
+  $self: &;
+
+  @include margin(0px, 0, 0px, 0);
+
+  &--footer {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, false);
+
+    #{ $self }__item {
+      @include position-flex(column, center, center);
+      @include size-custom(100%, false);
+    }
+
+    #{ $self }__link {
+      @include size-custom(100%, false);
+      @include padding(8px, 10px, 8px, 10px);
+      @include font-structure(map_get($font-family, regular), font-in-rem(12px), 300);
+      @include font-skin(map_get($white-scale-colors, white-100), false, false);
+
+      text-align: center;
+    }
+  }
+  &--social {
+    display: none;
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(row, center, flex-start);
+      @include size-custom(50%, false);
+
+      #{ $self }__item {
+        @include position-flex(column, center, center);
+        @include margin(0, 15px, 0, 0);
+      }
+
+      #{ $self }__link {
+        @include position-flex(row, center, center);
+        @include padding(0, 5px, 0, 5px);
+      }
+
+      #{ $self }__img {
+        @include size-custom(15px, 15px);
+        @include padding(0, 10px, 0, 5px);
+      }
+
+      #{ $self }__description {
+        @include font-structure(map_get($font-family, regular), font-in-rem(13px), 300);
+        @include font-skin(map_get($black-scale-colors, black-100), false, false);
+      }
+    }
+  }
+}
