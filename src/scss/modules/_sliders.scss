@@ -5,12 +5,54 @@
 .slider {
   $self: &;
 
+  &__heading {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, auto);
+    @include margin(5px, 0, 5px, 0);
+    @include font-structure(map_get($font-family, normal), px-to-rem(15px), 300);
+    @include font-skin(map_get($black-scale-colors, black-100), false, false);
+
+    text-transform: uppercase;
+    letter-spacing: px-to-rem(5px);
+  }
+
+  &__description {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, auto);
+    @include margin(5px, 0, 5px, 0);
+    @include font-structure(map_get($font-family, normal), px-to-rem(12px), 300);
+    @include font-skin(map_get($black-scale-colors, grey-300), false, false);
+  }
+
+  &__prices {
+    @include position-flex(row, center, center);
+    @include size-custom(100%, auto);
+    @include margin(5px, 0, 5px, 0);
+
+    &--normal {
+      @include font-structure(map_get($font-family, bold), px-to-rem(20px), 900);
+    }
+
+    &--sale {
+      @include font-structure(map_get($font-family, bold), px-to-rem(20px), 900);
+      @include font-skin(map_get($red-scale-colors, red-100), false, false);
+    }
+
+    &--old {
+      @include margin(0, 5px, 0, 5px);
+      @include font-structure(map_get($font-family, normal), px-to-rem(12px), 400);
+      @include font-skin(map_get($grey-scale-colors, grey-300), false, false);
+      text-decoration: line-through;
+    }
+  }
   &__single {
     @include position-flex(column, center, center);
+    &--products {
+      width: auto;
+    }
   }
 
   &__navigation {
-
     &::after {
       font-size: px-to-rem(16px);
       color: map_get($grey-scale-colors, grey-300);
@@ -19,6 +61,12 @@
         font-size: px-to-rem(32px);
         font-weight: 900;
         color: map_get($white-scale-colors, white-100);
+      }
+    }
+
+    &--products {
+      @include media-query(max, map_get($breakpoints, lg)) {
+        display: none;
       }
     }
   }
@@ -32,7 +80,8 @@
 
     #{ $self }__link {
       @include position-flex(column, center, center);
-      @include size-custom(250px, 250px);
+      @include size-custom(250px, 300px);
+      @include margin(25px, 0, 25px, 0);
 
       @include media-query(min, map_get($breakpoints, lg)) {
         @include size-custom(350px, 300px);
@@ -51,6 +100,50 @@
       @include size-custom(100%, 100%);
 
       object-fit: contain;
+    }
+  }
+
+  &--products {
+    @include margin(25px, 10px, 25px, 10px);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include margin(45px, 10px, 55px, 10px);
+    }
+
+    #{ $self }__link {
+      @include position-flex(column, center, center);
+      @include size-custom(250px, 300px);
+      @include margin(25px, 0, 25px, 0);
+
+      @include media-query(min, map_get($breakpoints, lg)) {
+        @include size-custom(300px, 400px);
+      }
+
+      @include media-query(min, map_get($breakpoints, xl)) {
+        @include size-custom(350px, 400px);
+      }
+
+      @include media-query(min, map_get($breakpoints, extra-xl)) {
+        @include size-custom(500px, 525px);
+      }
+    }
+
+    #{ $self }__img {
+      @include size-custom(100%, auto);
+
+      object-fit: contain;
+
+      @include media-query(min, map_get($breakpoints, lg)) {
+        @include size-custom(380px, 380px);
+      }
+    }
+
+    #{ $self }__navigation {
+      &::after {
+        @include media-query(min, map_get($breakpoints, xl)) {
+          color: map_get($grey-scale-colors, grey-400);
+        }
+      }
     }
   }
 
@@ -86,7 +179,6 @@
     }
 
     #{ $self }__navigation {
-
       &::after {
         @include media-query(min, map_get($breakpoints, xl)) {
           color: map_get($grey-scale-colors, grey-300);

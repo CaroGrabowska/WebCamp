@@ -1,3 +1,41 @@
+//PRODUCTS SLIDER
+
+const productsSlider = {
+  container: document.querySelector('.js-swiper-slider-products'),
+  navigation: {
+    next: document.querySelector('.js-swiper-slider-products__next'),
+    prev: document.querySelector('.js-swiper-slider-products__prev'),
+  },
+};
+
+const productsSliderConfig = {
+  clickableState: true,
+  slidesPerView: 'auto',
+  loop: true,
+  navigation: {
+    nextEl: productsSlider.navigation.next,
+    prevEl: productsSlider.navigation.prev,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
+};
+
+const productsSwiper = new Swiper(productsSlider.container, productsSliderConfig);
+
+
+//BRANDS SLIDER
+
 const brandsSlider = {
   container: document.querySelector('.js-swiper-slider-brands'),
   navigation: {
@@ -31,6 +69,8 @@ const brandsSliderConfig = {
 };
 
 const brandsSwiper = new Swiper(brandsSlider.container, brandsSliderConfig);
+
+//BENEFITS SLIDER
 
 const benefitsSlider = {
   container: document.querySelector('.js-swiper-slider-benefits'),
