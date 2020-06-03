@@ -1,0 +1,33 @@
+// ===============================
+// #TABLE
+// ===============================
+
+.table {
+  @include position-flex(column, false, false);
+  @include padding(0, 10px, 0, 10px);
+
+  &__row {
+    @include position-flex(row, false, false);
+    @include padding(5px, 0, 5px, 0);
+  }
+
+  &__key {
+    @include size-custom(50%, auto);
+    @include font-structure(map_get($font-family, normal), px-to-rem(15px), 300);
+    @include font-skin(map_get($black-scale-colors, black-100), false, false);
+  }
+
+  &__value {
+    @include size-custom(50%, auto);
+    @include font-structure(map_get($font-family, normal), px-to-rem(15px), 300);
+    @include font-skin(map_get($black-scale-colors, black-100), false, false);
+  }
+
+  &__description {
+    @include padding(15px, 0, 15px, 0);
+    @include font-structure(map_get($font-family, normal), px-to-rem(15px), 300);
+    @include font-skin(map_get($black-scale-colors, black-100), false, false);
+
+    line-height: px-to-rem(25px);
+  }
+}

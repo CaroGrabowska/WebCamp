@@ -1,10 +1,10 @@
 //PRODUCTS SLIDER
 
 const productsSlider = {
-  container: document.querySelector('.js-swiper-slider-products'),
+  container: document.querySelectorAll('.js-swiper-slider-products'),
   navigation: {
-    next: document.querySelector('.js-swiper-slider-products__next'),
-    prev: document.querySelector('.js-swiper-slider-products__prev'),
+    next: document.querySelectorAll('.js-swiper-slider-products__next'),
+    prev: document.querySelectorAll('.js-swiper-slider-products__prev'),
   },
 };
 

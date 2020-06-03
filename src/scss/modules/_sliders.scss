@@ -27,7 +27,7 @@
   &__prices {
     @include position-flex(row, center, center);
     @include size-custom(100%, auto);
-    @include margin(5px, 0, 5px, 0);
+    @include margin(10px, 0, 10px, 0);
 
     &--normal {
       @include font-structure(map_get($font-family, bold), px-to-rem(20px), 900);
@@ -39,7 +39,7 @@
     }
 
     &--old {
-      @include margin(0, 5px, 0, 5px);
+      @include margin(0, 10px, 0, 10px);
       @include font-structure(map_get($font-family, normal), px-to-rem(12px), 400);
       @include font-skin(map_get($grey-scale-colors, grey-300), false, false);
       text-decoration: line-through;
@@ -73,10 +73,6 @@
 
   &--benefits {
     @include margin(25px, 10px, 25px, 10px);
-
-    @include media-query(min, map_get($breakpoints, lg)) {
-      @include margin(45px, 10px, 55px, 10px);
-    }
 
     #{ $self }__link {
       @include position-flex(column, center, center);
@@ -113,7 +109,6 @@
     #{ $self }__link {
       @include position-flex(column, center, center);
       @include size-custom(250px, 300px);
-      @include margin(25px, 0, 25px, 0);
 
       @include media-query(min, map_get($breakpoints, lg)) {
         @include size-custom(300px, 400px);

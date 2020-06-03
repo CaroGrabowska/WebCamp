@@ -1,0 +1,39 @@
+// ===============================
+// #PRODUCT
+// ===============================
+
+.product {
+  @include position-flex(column, center, center);
+  @include size-custom(100%, auto);
+
+  &__description {
+    @include position-flex(row, center, center);
+    @include size-custom(100%, auto);
+  }
+}
+
+.description {
+  @include position-flex(column, center, center);
+  @include size-custom(100%, auto);
+
+  &__content {
+    @include padding(20px, 10px, 20px, 10px);
+    @include background-color(map_get($grey-scale-colors, grey-100));
+  }
+
+  &__gallery {
+  }
+}
+
+.gallery {
+  @include position-flex(column, center, center);
+  @include size-custom(100%, auto);
+  &__product {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, auto);
+  }
+
+  &__img {
+    @include size-max(300px, auto);
+  }
+}
