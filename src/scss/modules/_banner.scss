@@ -40,6 +40,7 @@
   }
 
   &--advertisment {
+    @include margin(0, auto, 70px, auto);
     @include background-color(map_get($white-scale-colors, white-100));
   }
 
@@ -100,10 +101,10 @@
 
 .benefits {
   &__title {
-    @include margin(30px, 10px, 30px, 10px);
+    @include margin(25px, 10px, 25px, 10px);
 
     @include media-query(min, map_get($breakpoints, lg)) {
-      @include margin(40px, auto, 40px, auto);
+      @include margin(40px, auto, 50px, auto);
     }
   }
 

@@ -1,0 +1,29 @@
+// =========================
+// TOOLBAR
+// =========================
+
+.toolbar {
+  &__link {
+    @include padding(0, 10px, 0, 10px);
+
+    @include media-query(min, 400px) {
+      @include padding(0, 15px, 0, 15px);
+    }
+
+    &--phone {
+      @include media-query(max, map_get($breakpoints, lg)) {
+        display: none;
+      }
+    }
+
+    &--account {
+      @include media-query(max, map_get($breakpoints, lg)) {
+        display: none;
+      }
+    }
+  }
+
+  &__img {
+    @include size-custom(25px, 25px);
+  }
+}

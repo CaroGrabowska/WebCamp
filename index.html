@@ -10,8 +10,61 @@
   </head>
 
   <body>
-    <header>
-      <nav></nav>
+    <header class="header">
+      <nav class="header__navigation navigation">
+        <div class="navigation__top">
+          <div class="nav-logo">
+            <img class="nav-logo__img" src="images/logo.png" alt="Shop logo" />
+          </div>
+          <div class="search">
+            <input class="search__input" type="text" placeholder="Wpisz czego szukasz" />
+            <button class="search__button">
+              <img class="search__logo" src="images/search.svg" alt="Shop logo" />
+            </button>
+          </div>
+          <div class="toolbar">
+            <a class="toolbar__link toolbar__link--phone" href="tel:34567890" title="Likes">
+              <img class="toolbar__img phone__img" src="images/phone-mobile.svg" alt="Like logo" />
+            </a>
+            <a class="toolbar__link toolbar__link--account" href="#" title="Likes">
+              <img class="toolbar__img account__img" src="images/person.svg" alt="Like logo" />
+            </a>
+            <a class="toolbar__link toolbar__link--like" href="#" title="Likes">
+              <img class="toolbar__img like__img" src="images/heart.svg" alt="Like logo" />
+            </a>
+            <button class="toolbar__link toolbar__link--basket">
+              <img class="toolbar__img basket__img" src="images/basket.svg" alt="Basket logo" />
+              <img class="toolbar__arrow" src="images/arrow-right.png" alt="Arrow"
+            </button>
+            <button class="toolbar__link toolbar__link--lang">
+              <img class="toolbar__img lang__img" src="images/lang.png" alt="Lang logo" />
+              <img class="toolbar__arrow" src="images/arrow-down.png" alt="Arrow"
+            </button>
+          </div>
+          <button class="hamburger">
+            <img class="hamburger__img" src="images/hamburger.svg" alt="Basket logo" />
+          </button>
+        </div>
+      </nav>
+      <div class="header__widget widget">
+        <div class="widget__sale">
+          <div class="t-structure-sm--tertiary t-skin--secondary t-transform--uppercase t-spacing--200 t-position--center">-20% na całą kolekcję zimową!</div>
+        </div>
+        <div class="widget__information information">
+          <div class="information__item">
+            <img class="information__img" src="images/delivery_1.png" alt="Delivery" />
+            <span class="information__content">darmowa dostawa</span>
+          </div>
+          <div class="information__item">
+            <img class="information__img" src="images/delivery_2.png" alt="Delivery" />
+            <span class="information__content">30 dni na zwrot</span>
+          </div>
+          <div class="information__item">
+            <img class="information__img" src="images/delivery_3.png" alt="Delivery" />
+            <span class="information__content">10% na pierwsze zakupy</span>
+          </div>
+        </div>
+      </div>
     </header>
     <section class="banner banner--brands">
       <div class="banner--slider">

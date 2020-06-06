@@ -1,0 +1,16 @@
+// =========================
+// HAMBURGER
+// =========================
+
+.hamburger {
+  @include position-flex(column, center, center);
+  @include padding(0, 10px, 0, 0);
+
+  @include media-query(min, map_get($breakpoints, lg)) {
+    display: none;
+  }
+
+  &__img {
+    @include size-custom(25px, 25px);
+  }
+}

@@ -72,7 +72,7 @@
   }
 
   &--benefits {
-    @include margin(25px, 10px, 25px, 10px);
+    @include margin(0, 10px, 25px, 10px);
 
     #{ $self }__link {
       @include position-flex(column, center, center);
@@ -100,22 +100,22 @@
   }
 
   &--products {
-    @include margin(25px, 10px, 25px, 10px);
+    @include margin(20px, 10px, 40px, 10px);
 
     @include media-query(min, map_get($breakpoints, lg)) {
-      @include margin(45px, 10px, 55px, 10px);
+      @include margin(45px, 10px, 70px, 10px);
     }
 
     #{ $self }__link {
       @include position-flex(column, center, center);
-      @include size-custom(250px, 300px);
+      @include size-custom(250px, 350px);
 
       @include media-query(min, map_get($breakpoints, lg)) {
         @include size-custom(300px, 400px);
       }
 
       @include media-query(min, map_get($breakpoints, xl)) {
-        @include size-custom(350px, 400px);
+        @include size-custom(350px, 450px);
       }
 
       @include media-query(min, map_get($breakpoints, extra-xl)) {

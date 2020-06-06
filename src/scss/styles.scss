@@ -39,6 +39,11 @@
 @import 'components/lists';
 @import 'components/box';
 @import 'components/table';
+@import 'components/widgets';
+@import 'components/logo';
+@import 'components/search';
+@import 'components/toolbar';
+@import 'components/hamburger';
 
 // =========================
 // MODULES
@@ -48,6 +53,8 @@
 @import 'modules/footer';
 @import 'modules/sliders';
 @import 'modules/product';
+@import 'modules/header';
+@import 'modules/navigation';
 
 // =========================
 // LAYOUT

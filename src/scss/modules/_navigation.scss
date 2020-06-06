@@ -1,0 +1,21 @@
+// =========================
+// NAVIGATION
+// =========================
+
+.navigation {
+  @include size-custom(100%, false);
+
+  @include media-query(min, map_get($breakpoints, xl)) {
+    @include size-max(1280px, false);
+    @include margin(0, auto, 0, auto);
+  }
+
+  @include media-query(min, map_get($breakpoints, extra-xl)) {
+    @include size-max(1680px, false);
+  }
+
+  &__top {
+    @include position-flex(row, center, space-between);
+    @include padding(12px, 5px, 12px, 5px);
+  }
+}

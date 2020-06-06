@@ -1,0 +1,13 @@
+// =========================
+// NAV LOGO
+// =========================
+
+.nav-logo {
+  &__img {
+    @include size-custom(140px, 30px);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include size-custom(300px, auto);
+    }
+  }
+}

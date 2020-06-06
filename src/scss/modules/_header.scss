@@ -1,0 +1,24 @@
+// =========================
+// HEADER
+// =========================
+
+.header {
+  @include position-flex(column, false, false);
+  @include size-custom(100%, false);
+
+  &__navigation {
+    order: 0;
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      order: 1;
+    }
+  }
+
+  &__widget {
+    order: 1;
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      order: 0;
+    }
+  }
+}

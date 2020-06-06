@@ -1,0 +1,50 @@
+// =========================
+// WIDGETS
+// =========================
+
+.widget {
+  @include position-flex(column, center, center);
+  @include size-custom(100%, false);
+
+  &__sale {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, false);
+    @include padding(10px, 0, 10px, 0);
+    @include background-color(map_get($red-scale-colors, red-100));
+  }
+
+  &__information {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, false);
+    @include padding(10px, 0, 10px, 0);
+    @include background-color(map_get($black-scale-colors, black-100));
+  }
+}
+
+.information {
+  @include position-flex(row, center, center);
+
+  @include media-query(max, map_get($breakpoints, lg)) {
+    display: none;
+  }
+
+  &__item {
+    @include position-flex(row, center, center);
+    @include padding(5px, 10px, 5px, 10px);
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include margin(0, 40px, 0, 40px);
+    }
+  }
+
+  &__img {
+    @include size-custom(20px, auto);
+    @include padding(0, 10px, 0, 10px);
+  }
+
+  &__content {
+    @include font-structure(map_get($font-family, semi-bold), px-to-rem(15px), 500);
+    @include font-skin(map_get($white-scale-colors, white-100), false, false);
+    text-transform: uppercase;
+  }
+}

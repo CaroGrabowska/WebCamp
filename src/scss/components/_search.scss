@@ -1,0 +1,32 @@
+// =========================
+// SEARCH
+// =========================
+
+.search {
+  @include position-flex(row, center, space-between);
+  @include padding(10px, 0, 10px, 0);
+
+  @include media-query(min, map_get($breakpoints, lg)) {
+    @include size-custom(300px, false);
+    @include padding(10px, 0, 10px, 0);
+    @include border(bottom, 1px, solid, map_get($black-scale-colors, black-100));
+  }
+
+  @include media-query(min, map_get($breakpoints, xl)) {
+    @include size-custom(380px, false);
+  }
+
+  &__input {
+    @include media-query(max, map_get($breakpoints, lg)) {
+      display: none;
+    }
+
+    &::placeholder {
+      @include font-structure(map_get($font-family, normal), px-to-rem(13px), 300);
+      @include font-skin(map_get($black-scale-colors, black-100), false, false);
+    }
+  }
+  &__logo {
+    @include size-custom(25px, 25px);
+  }
+}
