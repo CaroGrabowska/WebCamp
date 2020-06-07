@@ -7,3 +7,21 @@
     display: none;
   }
 }
+
+//MOBILE MENU DYNAMIC CLASSES
+
+.js-overflow-hidden {
+  overflow: hidden;
+}
+
+.js-navbar-scroll {
+  @include media-query(max, map_get($breakpoints, lg)) {
+    display: block;
+    height: 100vh;
+    overflow-y: auto;
+  }
+}
+
+.js-display-none {
+  display: none;
+}

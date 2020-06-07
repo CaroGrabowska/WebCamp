@@ -1,0 +1,46 @@
+// =========================
+// NAV LISTS
+// =========================
+
+.nav {
+  @include position(absolute, 0, 0, false, false);
+  @include size-custom(80%, false);
+  @include background-color(map_get($white-scale-colors, white-100));
+  z-index: map_get($z-index, index-200);
+}
+
+.main-list {
+  @include position-flex(column, center, center);
+  @include size-custom(100%, auto);
+  margin-top: 0;
+
+  &__item {
+    @include size-custom(100%, auto);
+
+    &--toolbar {
+      @include position-flex(row, flex-start, flex-start);
+      @include size-custom(100%, auto);
+      @include background-color(map_get($grey-scale-colors, grey-200));
+    }
+  }
+
+  &__link {
+    @include position-flex(column, flex-start, flex-start);
+    @include padding(20px, 15px, 20px, 20px);
+    @include border(bottom, 1px, solid, map_get($grey-scale-colors, grey-300));
+
+    &--toolbar {
+      @include position-flex(row, center, flex-start);
+      @include size-custom(100%, auto);
+      @include padding(20px, 15px, 20px, 20px);
+      @include border(bottom, 1px, solid, map_get($grey-scale-colors, grey-300));
+    }
+  }
+
+  &__img {
+    &--toolbar {
+      @include size-custom(20px, 20px);
+      @include padding(0, 15px, 0, 0);
+    }
+  }
+}

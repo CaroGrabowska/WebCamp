@@ -11,7 +11,7 @@
 
   <body>
     <header class="header">
-      <nav class="header__navigation navigation">
+      <div class="header__navigation navigation">
         <div class="navigation__top">
           <div class="nav-logo">
             <img class="nav-logo__img" src="images/logo.png" alt="Shop logo" />
@@ -23,7 +23,7 @@
             </button>
           </div>
           <div class="toolbar">
-            <a class="toolbar__link toolbar__link--phone" href="tel:34567890" title="Likes">
+            <a class="toolbar__link toolbar__link--phone" href="tel:+48786818322" title="Likes">
               <img class="toolbar__img phone__img" src="images/phone-mobile.svg" alt="Like logo" />
             </a>
             <a class="toolbar__link toolbar__link--account" href="#" title="Likes">
@@ -34,6 +34,10 @@
             </a>
             <button class="toolbar__link toolbar__link--basket">
               <img class="toolbar__img basket__img" src="images/basket.svg" alt="Basket logo" />
+              <div class="toolbar__content">
+                <div class="toolbar__title">koszyk</div>
+                <div class="toolbar__amount">225,00 ZŁ</div>
+              </div>
               <img class="toolbar__arrow" src="images/arrow-right.png" alt="Arrow"
             </button>
             <button class="toolbar__link toolbar__link--lang">
@@ -41,11 +45,11 @@
               <img class="toolbar__arrow" src="images/arrow-down.png" alt="Arrow"
             </button>
           </div>
-          <button class="hamburger">
+          <button class="hamburger js-mobile-toogler-emitter">
             <img class="hamburger__img" src="images/hamburger.svg" alt="Basket logo" />
           </button>
         </div>
-      </nav>
+      </div>
       <div class="header__widget widget">
         <div class="widget__sale">
           <div class="t-structure-sm--tertiary t-skin--secondary t-transform--uppercase t-spacing--200 t-position--center">-20% na całą kolekcję zimową!</div>
@@ -65,6 +69,57 @@
           </div>
         </div>
       </div>
+      <nav class="header__nav nav js-mobile-toogler-adapter js-display-none">
+        <ul class="nav__main main-list">
+          <li class="main-list__item">
+            <a class="main-list__link" href="#" title="Damskie">Damskie</a>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link" href="#" title="Męskie">Męskie</a>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link" href="#" title="Torebki">Torebki</a>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link" href="#" title="Akcesoria">Akcesoria</a>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link" href="#" title="Premium">Premium</a>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link" href="#" title="Marki">Marki</a>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link" href="#" title="Nowości">Nowości</a>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link" href="#" title="Wyprzedarze">Wyprzedarze</a>
+          </li>
+          <li class="main-list__item--toolbar">
+            <a class="main-list__link--toolbar" href="#" title="Zaloguj się"> <img class="main-list__img--toolbar" src="images/person.svg" />Zaloguj się</a>
+          </li>
+          <li class="main-list__item--toolbar">
+            <a class="main-list__link--toolbar" href="#" title="Zarejestruj"> <img class="main-list__img--toolbar" src="images/lock.svg" />Zarejestruj</a>
+          </li>
+          <li class="main-list__item--toolbar">
+            <a class="main-list__link--toolbar" href="#" title="Status"> <img class="main-list__img--toolbar" src="images/globe.svg" />Sprawdź status zamówienia</a>
+          </li>
+          <li class="main-list__item--toolbar">
+            <a class="main-list__link--toolbar" href="tel:+48786818322" title="Tel"> <img class="main-list__img--toolbar" src="images/phone.svg" />+48 786818322</a>
+          </li>
+          <li class="main-list__item--toolbar">
+            <a class="main-list__link--toolbar" href="mailto:info@adarmo.pl" title="Email"> <img class="main-list__img--toolbar" src="images/mailing.svg" />info@adarmo.pl</a>
+          </li>
+          <li class="main-list__item--toolbar">
+            <a class="main-list__link--toolbar total" href="#" title="Total">
+              <img class="main-list__img--toolbar" src="images/lang.png" />
+              <span class="total__price">0,00 zł</span>
+              <span class="total__price">0,00 zł</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__overlay js-mobile-overlay js-display-none"></div>
     </header>
     <section class="banner banner--brands">
       <div class="banner--slider">

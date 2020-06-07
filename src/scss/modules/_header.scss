@@ -3,8 +3,22 @@
 // =========================
 
 .header {
+  @include position(relative, false, false, false, false);
   @include position-flex(column, false, false);
   @include size-custom(100%, false);
+
+  &__overlay {
+    @include position(absolute, 0, 0, false, false);
+    @include size-custom(100%, 100vh);
+    @include background-color(map_get($black-scale-colors, black-200));
+
+    opacity: 0.2;
+    z-index: map_get($z-index, index-100);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      display: none;
+    }
+  }
 
   &__navigation {
     order: 0;
@@ -19,6 +33,12 @@
 
     @include media-query(min, map_get($breakpoints, lg)) {
       order: 0;
+    }
+  }
+
+  &__nav {
+    @include media-query(min, map_get($breakpoints, lg)) {
+      order: 2;
     }
   }
 }

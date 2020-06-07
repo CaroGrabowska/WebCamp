@@ -3,6 +3,39 @@
 // =========================
 
 .toolbar {
+  @include position-flex(row, false, false);
+
+  &__content {
+    @include position-flex(column, flex-start, flex-start);
+    @include padding(0, 5px, 0, 5px);
+
+    @include media-query(max, map_get($breakpoints, lg)) {
+      display: none;
+    }
+  }
+
+  &__title {
+    @include font-structure(map_get($font-family, bold), px-to-rem(13px), 900);
+    @include font-skin(map_get($black-scale-colors, black-100), false, false);
+
+    text-transform: uppercase;
+  }
+
+  &__amount {
+    @include font-structure(map_get($font-family, bold), px-to-rem(13px), 900);
+    @include font-skin(map_get($black-scale-colors, black-100), false, false);
+
+    text-transform: uppercase;
+  }
+
+  &__arrow {
+    @include padding(0, 10px, 0, 10px);
+
+    @include media-query(max, map_get($breakpoints, lg)) {
+      display: none;
+    }
+  }
+
   &__link {
     @include padding(0, 10px, 0, 10px);
 
@@ -17,6 +50,17 @@
     }
 
     &--account {
+      @include media-query(max, map_get($breakpoints, lg)) {
+        display: none;
+      }
+    }
+
+    &--basket {
+      @include position-flex(row, center, center);
+    }
+
+    &--lang {
+      @include position-flex(row, center, center);
       @include media-query(max, map_get($breakpoints, lg)) {
         display: none;
       }
