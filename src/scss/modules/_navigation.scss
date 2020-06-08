@@ -6,7 +6,7 @@
   @include size-custom(100%, false);
 
   @include media-query(min, map_get($breakpoints, xl)) {
-    @include size-max(1280px, false);
+    @include size-max(1300px, false);
     @include margin(0, auto, 0, auto);
   }
 
@@ -17,5 +17,9 @@
   &__top {
     @include position-flex(row, center, space-between);
     @include padding(12px, 5px, 12px, 5px);
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include padding(30px, 5px, 20px, 5px);
+    }
   }
 }

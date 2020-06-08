@@ -10,6 +10,7 @@ body {
   height: 100%;
   width: 100%;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 button {
@@ -57,13 +58,12 @@ input,
 textarea,
 span,
 select {
-
   &:focus {
     outline: none;
   }
 
   .accessibility &:focus {
-    outline: 2px solid #0000FF;
+    outline: 2px solid #0000ff;
     outline-offset: 2px;
   }
 }

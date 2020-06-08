@@ -4,15 +4,32 @@
 
 .nav {
   @include position(absolute, 0, 0, false, false);
-  @include size-custom(80%, false);
+  @include size-custom(85%, false);
   @include background-color(map_get($white-scale-colors, white-100));
+
+  transform: translateX(100%);
   z-index: map_get($z-index, index-200);
+
+  @include media-query(min, map_get($breakpoints, lg)) {
+    @include position(static, false, false, false, false);
+    @include size-custom(100%, false);
+    transform: translateX(0);
+  }
+
+  @include media-query(min, map_get($breakpoints, xl)) {
+    @include size-max(1300px, false);
+    @include margin(0, auto, 0, auto);
+  }
 }
 
 .main-list {
   @include position-flex(column, center, center);
   @include size-custom(100%, auto);
   margin-top: 0;
+
+  @include media-query(min, map_get($breakpoints, lg)) {
+    @include position-flex(row, center, center);
+  }
 
   &__item {
     @include size-custom(100%, auto);
@@ -21,6 +38,10 @@
       @include position-flex(row, flex-start, flex-start);
       @include size-custom(100%, auto);
       @include background-color(map_get($grey-scale-colors, grey-200));
+
+      @include media-query(min, map_get($breakpoints, lg)) {
+        display: none;
+      }
     }
   }
 
@@ -28,12 +49,29 @@
     @include position-flex(column, flex-start, flex-start);
     @include padding(20px, 15px, 20px, 20px);
     @include border(bottom, 1px, solid, map_get($grey-scale-colors, grey-300));
+    @include font-structure(map_get($font-family, semi-bold), px-to-rem(15px), 500);
+    @include font-skin(map_get($black-scale-colors, black-100), false, false);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(column, center, center);
+      @include padding(30px, 10px, 30px, 10px);
+      @include font-structure(map_get($font-family, semi-bold), px-to-rem(18px), 600);
+      text-transform: uppercase;
+    }
 
     &--toolbar {
       @include position-flex(row, center, flex-start);
       @include size-custom(100%, auto);
       @include padding(20px, 15px, 20px, 20px);
       @include border(bottom, 1px, solid, map_get($grey-scale-colors, grey-300));
+      @include font-structure(map_get($font-family, semi-bold), px-to-rem(15px), 500);
+      @include font-skin(map_get($black-scale-colors, black-100), false, false);
+    }
+
+    &--sold {
+      @include media-query(min, map_get($breakpoints, lg)) {
+        @include font-skin(map_get($red-scale-colors, red-100), false, false);
+      }
     }
   }
 
@@ -42,5 +80,18 @@
       @include size-custom(20px, 20px);
       @include padding(0, 15px, 0, 0);
     }
+  }
+}
+
+.total {
+  @include position-flex(row, center, flex-start);
+
+  &__price {
+    @include padding(5px, 20px, 5px, 0);
+    @include border(right, 1px, solid, map_get($grey-scale-colors, grey-300));
+  }
+
+  &__link {
+    @include padding(5px, 20px, 5px, 20px);
   }
 }

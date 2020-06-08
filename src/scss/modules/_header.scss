@@ -7,12 +7,17 @@
   @include position-flex(column, false, false);
   @include size-custom(100%, false);
 
+  @include media-query(min, map_get($breakpoints, lg)) {
+    @include position(static, false, false, false, false);
+  }
+
   &__overlay {
     @include position(absolute, 0, 0, false, false);
     @include size-custom(100%, 100vh);
     @include background-color(map_get($black-scale-colors, black-200));
 
-    opacity: 0.2;
+    transform: translateX(100%);
+    opacity: 0;
     z-index: map_get($z-index, index-100);
 
     @include media-query(min, map_get($breakpoints, lg)) {

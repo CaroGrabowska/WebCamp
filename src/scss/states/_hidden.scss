@@ -11,7 +11,9 @@
 //MOBILE MENU DYNAMIC CLASSES
 
 .js-overflow-hidden {
-  overflow: hidden;
+  @include media-query(max, map_get($breakpoints, lg)) {
+    overflow-y: hidden;
+  }
 }
 
 .js-navbar-scroll {
@@ -22,6 +24,20 @@
   }
 }
 
-.js-display-none {
-  display: none;
+.js-display-mobile {
+  @include media-query(max, map_get($breakpoints, lg)) {
+    animation-name: fade-in;
+    animation-duration: 0.9s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+  }
+}
+
+.js-display-mobile-overlay {
+  @include media-query(max, map_get($breakpoints, lg)) {
+    animation-name: fade-in-overlay;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+  }
 }
