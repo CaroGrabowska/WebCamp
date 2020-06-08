@@ -6,6 +6,9 @@
   @include position(relative, false, false, false, false);
   @include position-flex(column, false, false);
   @include size-custom(100%, false);
+  @include background-color(map_get($white-scale-colors, white-100));
+
+  z-index: map_get($z-index, index-50);
 
   @include media-query(min, map_get($breakpoints, lg)) {
     @include position(static, false, false, false, false);

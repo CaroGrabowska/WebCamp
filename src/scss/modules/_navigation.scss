@@ -6,7 +6,7 @@
   @include size-custom(100%, false);
 
   @include media-query(min, map_get($breakpoints, xl)) {
-    @include size-max(1300px, false);
+    @include size-max(1380px, false);
     @include margin(0, auto, 0, auto);
   }
 
@@ -21,5 +21,11 @@
     @include media-query(min, map_get($breakpoints, xl)) {
       @include padding(30px, 5px, 20px, 5px);
     }
+  }
+}
+
+.position-sticky {
+  @include media-query(max, map_get($breakpoints, lg)) {
+    position: fixed;
   }
 }

@@ -17,7 +17,7 @@
   }
 
   @include media-query(min, map_get($breakpoints, xl)) {
-    @include size-max(1300px, false);
+    @include size-max(1280px, false);
     @include margin(0, auto, 0, auto);
   }
 }
@@ -54,7 +54,7 @@
 
     @include media-query(min, map_get($breakpoints, lg)) {
       @include position-flex(column, center, center);
-      @include padding(30px, 10px, 30px, 10px);
+      @include padding(30px, 5px, 30px, 5px);
       @include font-structure(map_get($font-family, semi-bold), px-to-rem(18px), 600);
       text-transform: uppercase;
     }
