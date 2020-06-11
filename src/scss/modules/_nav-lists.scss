@@ -45,6 +45,21 @@
     }
   }
 
+  &__banner {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, 200px);
+    @include background-color(map_get($grey-scale-colors, grey-200));
+    @include font-structure(map_get($font-family, regular), px-to-rem(12px), 300);
+    @include font-skin(map_get($black-scale-colors, black-100), 3.5px, uppercase);
+
+    text-align: center;
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include size-custom(100%, 345px);
+      font-size: font-in-rem(16px);
+    }
+  }
+
   &__link {
     @include position-flex(column, flex-start, flex-start);
     @include padding(20px, 15px, 20px, 20px);

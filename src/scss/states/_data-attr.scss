@@ -30,6 +30,7 @@
 [data-parent='true'] {
   position: relative;
   align-items: center;
+  font-weight: 900;
   &:after {
     content: url('../../../images/arrow.png');
     position: absolute;
@@ -89,6 +90,7 @@
 [data-subparent='true'] {
   position: relative;
   align-items: center;
+  font-weight: 900;
   &:after {
     content: url('../../../images/arrow.png');
     position: absolute;

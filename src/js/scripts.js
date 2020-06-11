@@ -73,6 +73,22 @@
         closestChild.setAttribute(menuObj.childAttr, dataAttrToSet);
       }
 
+      function resetElementsAttr(menuType){
+        menuType.parents.forEach((item) => {
+          item.setAttribute(menuType.parentAttr, 'false');
+        });
+
+        const elChildren = document.querySelectorAll(menuType.child);
+          elChildren.forEach((item) => {
+            item.setAttribute(menuType.childAttr, 'false');
+          });
+       }
+
+       function resetMainAttr(menuMain, menuSub) {
+         menuMain.main.setAttribute(menuMain.mainAttr, 'true');
+         menuSub.main.setAttribute(menuSub.mainAttr, 'false');
+       }
+
       //MOBILE MENU LIST
       const toggleMenuMobile = {
         emitter: document.querySelector('.js-mobile-toogler-emitter'),
@@ -99,6 +115,9 @@
         toggleMenuMobile.absorber.classList.remove(toggleMenuMobile.classVisibility);
         toggleMenuMobile.absorber.classList.remove(toggleMenuMobile.classToElement);
         toggleMenuMobile.body.classList.remove(toggleMenuMobile.classToBody);
+        resetMainAttr(menu, submenu);
+        resetElementsAttr(menu);
+        resetElementsAttr(submenu);
       });
 
       //FOOTER MENU LIST
