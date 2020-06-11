@@ -3,6 +3,20 @@
     'DOMContentLoaded',
     function () {
 
+      const widget = document.querySelector('.js-widget-sale');
+
+      window.addEventListener('scroll',function () {
+         const currentScroll = window.pageYOffset;
+
+         if (currentScroll > 300) {
+           // down
+           widget.classList.add('js-display-none');
+         } else if (currentScroll < 300) {
+           // up
+            widget.classList.remove('js-display-none');
+         }
+      });
+
       //MOBILE MENU LIST
       const toggleMenuMobile = {
         emitter: document.querySelector('.js-mobile-toogler-emitter'),
@@ -29,19 +43,6 @@
         toggleMenuMobile.absorber.classList.remove(toggleMenuMobile.classVisibility);
         toggleMenuMobile.absorber.classList.remove(toggleMenuMobile.classToElement);
         toggleMenuMobile.body.classList.remove(toggleMenuMobile.classToBody);
-      });
-
-
-      const widget = document.querySelector('.js-widget-sale');
-
-      document.body.addEventListener('scroll', (e) => {
-        let currentScrollPos = e.pageYOffset;
-        console.log(e.pageYOffset);
-        if ( 200 < currentScrollPos) {
-          widget.classList.add('js-hidden');
-        } else {
-         widget.classList.remove('js-hidden');
-        }
       });
 
       //FOOTER MENU LIST

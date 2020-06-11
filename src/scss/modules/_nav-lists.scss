@@ -55,8 +55,13 @@
     @include media-query(min, map_get($breakpoints, lg)) {
       @include position-flex(column, center, center);
       @include padding(30px, 5px, 30px, 5px);
-      @include font-structure(map_get($font-family, semi-bold), px-to-rem(18px), 600);
+      @include font-structure(map_get($font-family, semi-bold), px-to-rem(16px), 600);
+      border: none;
       text-transform: uppercase;
+    }
+
+    @include media-query(min, map_get($breakpoints, extra-xl)) {
+      @include font-structure(map_get($font-family, semi-bold), px-to-rem(18px), 600);
     }
 
     &--toolbar {
