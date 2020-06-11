@@ -1,0 +1,98 @@
+// =========================
+// DATA ATTRIBUTES
+// =========================
+
+//MAIN MENU ACTIVE
+
+[data-menu-active='false'] {
+  [data-parent='false'] {
+    display: none;
+  }
+
+  [data-non-parent='true'] {
+    display: none;
+  }
+}
+
+//PARENTS IN MAIN MENU - NON-ACTIVE
+
+[data-parent='false'] {
+  position: relative;
+  &:after {
+    content: url('../../../images/arrow.png');
+    position: absolute;
+    left: 90%;
+  }
+}
+
+//PARENTS IN MAIN MENU - ACTIVE
+
+[data-parent='true'] {
+  position: relative;
+  align-items: center;
+  &:after {
+    content: url('../../../images/arrow.png');
+    position: absolute;
+    right: 90%;
+    transform: rotate(180deg);
+  }
+}
+
+//CHILD IN MAIN MENU - ACTIVE
+
+[data-child='false'] {
+  display: none;
+}
+
+/* SUBMENU */
+
+//SUBMENU INACTIVE
+
+[data-submenu-active='false'] {
+  [data-subchild='false'] {
+    display: none;
+  }
+}
+
+//SUBMENU ACTIVE
+
+[data-submenu-active='true'] {
+  [data-parent='true'] {
+    display: none;
+  }
+
+  [data-subparent='false'] {
+    display: none;
+  }
+
+  [data-non-subparent='true'] {
+    display: none;
+  }
+
+  [data-subchild='false'] {
+    display: none;
+  }
+}
+//PARENTS IN SUB MENU - NON-ACTIVE
+
+[data-subparent='false'] {
+  position: relative;
+  &:after {
+    content: url('../../../images/arrow.png');
+    position: absolute;
+    left: 90%;
+  }
+}
+
+//PARENTS IN MAIN MENU - ACTIVE
+
+[data-subparent='true'] {
+  position: relative;
+  align-items: center;
+  &:after {
+    content: url('../../../images/arrow.png');
+    position: absolute;
+    right: 90%;
+    transform: rotate(180deg);
+  }
+}
