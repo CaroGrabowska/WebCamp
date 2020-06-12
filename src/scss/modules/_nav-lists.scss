@@ -23,6 +23,7 @@
 }
 
 .main-list {
+  $self: &;
   @include position-flex(column, center, center);
   @include size-custom(100%, auto);
   margin-top: 0;
@@ -55,8 +56,23 @@
     text-align: center;
 
     @include media-query(min, map_get($breakpoints, lg)) {
-      @include size-custom(100%, 345px);
-      font-size: font-in-rem(16px);
+      @include size-custom(350px, 345px);
+      font-size: px-to-rem(16px);
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include size-custom(500px, 345px);
+    }
+
+    &--items {
+      @include media-query(min, map_get($breakpoints, lg)) {
+        @include position-flex(row, center, center);
+
+        a {
+          @include font-structure(map_get($font-family, bold), px-to-rem(14px), 900);
+          @include margin(0, 15px, 0, 15px);
+        }
+      }
     }
   }
 
@@ -73,6 +89,7 @@
       @include font-structure(map_get($font-family, semi-bold), px-to-rem(16px), 600);
       border: none;
       text-transform: uppercase;
+      letter-spacing: 1.5px;
     }
 
     @include media-query(min, map_get($breakpoints, extra-xl)) {
@@ -101,6 +118,37 @@
       @include padding(0, 15px, 0, 0);
     }
   }
+
+  &--lg-relative {
+    @include media-query(min, map_get($breakpoints, lg)) {
+      position: relative;
+    }
+  }
+
+  &--lg-absolute {
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(row, flex-start, space-around);
+      flex-wrap: wrap;
+      position: absolute;
+      left: 0;
+      min-width: 1000px;
+      @include background-color(map_get($white-scale-colors, white-100));
+
+      #{ $self }__item {
+        @include size-custom(auto, auto);
+        @include margin(10px, 10px, 10px, 10px);
+      }
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include padding(20px, 0, 20px, 0);
+      width: 1280px;
+    }
+
+    @include media-query(min, map_get($breakpoints, extra-xl)) {
+      @include padding(20px, 20px, 20px, 20px);
+    }
+  }
 }
 
 .total {
@@ -113,5 +161,32 @@
 
   &__link {
     @include padding(5px, 20px, 5px, 20px);
+  }
+}
+
+.js-submenu-child {
+  @include media-query(min, map_get($breakpoints, lg)) {
+    @include position-flex(column, flex-start, flex-start);
+
+    .main-list__link {
+      @include padding(10px, 10px, 10px, 5px);
+      @include font-structure(map_get($font-family, regular), px-to-rem(13px), 300);
+      @include font-skin(map_get($black-scale-colors, black-100), false, false);
+
+      text-transform: capitalize;
+    }
+
+    .main-list__item {
+      @include margin(0, 0, 0, 0);
+    }
+  }
+}
+
+.js-submenu-parent {
+  @include media-query(min, map_get($breakpoints, lg)) {
+    @include position-flex(column, flex-start, flex-start);
+    @include padding(5px, 5px, 5px, 5px);
+    @include font-structure(map_get($font-family, bold), px-to-rem(14px), 900);
+    @include font-skin(map_get($black-scale-colors, black-100), false, false);
   }
 }

@@ -3,14 +3,15 @@
 // =========================
 
 //MAIN MENU ACTIVE
-
 [data-menu-active='false'] {
-  [data-parent='false'] {
-    display: none;
-  }
+  @include media-query(max, map_get($breakpoints, lg)) {
+    [data-parent='false'] {
+      display: none;
+    }
 
-  [data-non-parent='true'] {
-    display: none;
+    [data-non-parent='true'] {
+      display: none;
+    }
   }
 }
 
@@ -22,6 +23,12 @@
     content: url('../../../images/arrow.png');
     position: absolute;
     left: 90%;
+  }
+
+  @include media-query(min, map_get($breakpoints, lg)) {
+    &:after {
+      content: '';
+    }
   }
 }
 
@@ -37,6 +44,12 @@
     right: 90%;
     transform: rotate(180deg);
   }
+
+  @include media-query(min, map_get($breakpoints, lg)) {
+    &:after {
+      content: '';
+    }
+  }
 }
 
 //CHILD IN MAIN MENU - ACTIVE
@@ -50,28 +63,32 @@
 //SUBMENU INACTIVE
 
 [data-submenu-active='false'] {
-  [data-subchild='false'] {
-    display: none;
+  @include media-query(max, map_get($breakpoints, lg)) {
+    [data-subchild='false'] {
+      display: none;
+    }
   }
 }
 
 //SUBMENU ACTIVE
 
 [data-submenu-active='true'] {
-  [data-parent='true'] {
-    display: none;
-  }
+  @include media-query(max, map_get($breakpoints, lg)) {
+    [data-parent='true'] {
+      display: none;
+    }
 
-  [data-subparent='false'] {
-    display: none;
-  }
+    [data-subparent='false'] {
+      display: none;
+    }
 
-  [data-non-subparent='true'] {
-    display: none;
-  }
+    [data-non-subparent='true'] {
+      display: none;
+    }
 
-  [data-subchild='false'] {
-    display: none;
+    [data-subchild='false'] {
+      display: none;
+    }
   }
 }
 //PARENTS IN SUB MENU - NON-ACTIVE
@@ -82,6 +99,12 @@
     content: url('../../../images/arrow.png');
     position: absolute;
     left: 90%;
+  }
+
+  @include media-query(min, map_get($breakpoints, lg)) {
+    &:after {
+      content: '';
+    }
   }
 }
 
@@ -96,5 +119,11 @@
     position: absolute;
     right: 90%;
     transform: rotate(180deg);
+  }
+
+  @include media-query(min, map_get($breakpoints, lg)) {
+    &:after {
+      content: '';
+    }
   }
 }
