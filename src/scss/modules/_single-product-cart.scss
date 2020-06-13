@@ -6,14 +6,30 @@
   @include position-flex(column, center, center);
   @include size-custom(100%, auto);
 
+  @include media-query(min, map_get($breakpoints, lg)) {
+    @include position-flex(row, flex-start, center);
+  }
+
   &__price {
     @include position-flex(column, false, false);
     @include size-custom(100%, auto);
-    @include margin(15px, 0, 20px, 0);
+    @include margin(15px, 0, 15px, 0);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include padding(0, 20px, 0, 20px);
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include size-custom(80%, false);
+    }
 
     .price-normal {
       @include font-structure(map_get($font-family, bold), px-to-rem(30px), 900);
       @include font-skin(map_get($red-scale-colors, red-100), false, false);
+
+      @include media-query(min, map_get($breakpoints, xl)) {
+        @include font-structure(map_get($font-family, bold), px-to-rem(40px), 900);
+      }
     }
 
     .price-subnormal {
@@ -25,6 +41,10 @@
       @include font-structure(map_get($font-family, regular), px-to-rem(20px), 400);
       @include font-skin(map_get($grey-scale-colors, grey-500), false, false);
       text-decoration: line-through;
+
+      @include media-query(min, map_get($breakpoints, xl)) {
+        @include font-structure(map_get($font-family, regular), px-to-rem(30px), 400);
+      }
     }
 
     .price-description {
@@ -37,17 +57,53 @@
   &__add-to-card {
     @include position-flex(column, center, center);
     @include size-custom(100%, auto);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include padding(0, 20px, 0, 20px);
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include size-custom(80%, false);
+    }
   }
 
   &__slider {
     @include position-flex(column, center, center);
     @include size-custom(100%, auto);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(column, center, space-between);
+      @include size-custom(60%, auto);
+    }
   }
 
   &__order {
+    position: relative;
     @include position-flex(column, center, center);
     @include size-custom(100%, auto);
     @include padding(10px, 10px, 10px, 10px);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include size-custom(40%, auto);
+      @include padding(20px, 0, 0, 0);
+      @include background-color(map_get($grey-scale-colors, grey-100));
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      &:after {
+        @include pseudo-elements('', block, absolute, 0, false, false, 100%);
+        @include size-custom(calc((100vw - 1280px) / 2), 623px);
+        @include background-color(map_get($grey-scale-colors, grey-100));
+      }
+    }
+
+    @include media-query(min, map_get($breakpoints, extra-xl)) {
+      &:after {
+        @include pseudo-elements('', block, absolute, 0, false, false, 100%);
+        @include size-custom(calc((100vw - 1640px) / 2), 623px);
+        @include background-color(map_get($grey-scale-colors, grey-100));
+      }
+    }
   }
 
   &__more-products {
@@ -55,16 +111,133 @@
     @include size-custom(100%, auto);
     @include margin(20px, auto, 20px, auto);
   }
+
+  &__description {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, auto);
+    order: 1;
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(row, center, center);
+      order: 0;
+    }
+  }
+
+  &__ratings {
+    @include position-flex(row, center, center);
+    @include size-custom(100%, auto);
+    order: 0;
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(column, center, center);
+      @include size-custom(40%, auto);
+      order: 1;
+    }
+
+    .label {
+      @include position-flex(column, center, center);
+      @include padding(10px, 20px, 10px, 20px);
+      @include margin(0, 10px, 0, 10px);
+      @include background-color(map_get($red-scale-colors, red-100));
+      @include font-structure(map_get($font-family, bold), px-to-rem(10px), 700);
+      @include font-skin(map_get($white-scale-colors, white-100), 0.8px, uppercase);
+      @include transition(all, 0.3s, ease-in-out);
+
+      @include media-query(min, map_get($breakpoints, lg)) {
+        @include margin(0, 0, 10px, 0);
+      }
+    }
+
+    .ratings {
+      @include position-flex(row, center, center);
+
+      &__container {
+        @include position-flex(row, center, center);
+      }
+
+      &__img {
+        @include size-custom(15px, 15px);
+        @include margin(0, 2px, 0, 2px);
+      }
+
+      &__number {
+        @include font-structure(map_get($font-family, bold), px-to-rem(17px), 700);
+        @include font-skin(map_get($black-scale-colors, black-100), 0, uppercase);
+        @include margin(0, 2px, 0, 2px);
+      }
+    }
+  }
+
+  &__title {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, auto);
+
+    .title {
+      @include font-structure(map_get($font-family, semi-bold), px-to-rem(20px), 400);
+      @include font-skin(map_get($black-scale-colors, black-100), 4px, uppercase);
+      @include margin(15px, 0, 5px, 0);
+
+      @include media-query(min, map_get($breakpoints, xl)) {
+        @include font-structure(map_get($font-family, semi-bold), px-to-rem(30px), 400);
+      }
+    }
+
+    .long-title {
+      @include font-structure(map_get($font-family, semi-bold), px-to-rem(15px), 300);
+      @include font-skin(map_get($black-scale-colors, black-100), 0.8px, false);
+      @include margin(5px, 0, 10px, 0);
+
+      text-align: center;
+
+      &__desc {
+        @include font-structure(map_get($font-family, semi-bold), px-to-rem(15px), 300);
+        @include font-skin(map_get($black-scale-colors, black-100), 0.8px, false);
+        @include media-query(max, map_get($breakpoints, lg)) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__delivery {
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include padding(0, 20px, 20px, 20px);
+    }
+  }
+
+  &__availability {
+    @include background-color(map_get($white-scale-colors, white-100));
+  }
 }
 
 .more-products {
   &__link {
     position: relative;
-    @include margin(10px, auto, 10px, auto);
+    @include margin(10px, 0, 10px, 0);
 
     &:after {
       @include pseudo-elements(url('../../../images/arrow.png'), block, absolute, 0, false, false, 105%);
       @include size-custom(10px, 10px);
+    }
+  }
+
+  &--sm-visible {
+    @include media-query(min, 1023px) {
+      display: none;
+    }
+  }
+
+  &--lg-visible {
+    @include position-flex(column, flex-start, flex-start);
+    @include padding(0, 20px, 0, 20px);
+    @include margin(5px, 0, 5px, 0);
+
+    @include media-query(max, map_get($breakpoints, lg)) {
+      display: none;
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include size-custom(80%, false);
     }
   }
 }
@@ -73,10 +246,29 @@
   @include position-flex(column, center, center);
   @include size-custom(100%, auto);
 
+  .benefits__title {
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include margin(30px, auto, 20px, 40px);
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include margin(30px, auto, 20px, 80px);
+    }
+  }
+
   &__container {
     @include position-flex(row, center, center);
     @include size-custom(100%, auto);
     @include margin(20px, 0, 40px, 0);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(row, flex-start, flex-start);
+      @include margin(20px, 0, 40px, 40px);
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include margin(30px, auto, 20px, 80px);
+    }
   }
 
   &__item {
@@ -100,6 +292,10 @@
   @include position-flex(column, false, false);
   @include size-custom(100%, auto);
   @include margin(5px, 0, 5px, 0);
+
+  @include media-query(min, map_get($breakpoints, xl)) {
+    @include size-custom(80%, false);
+  }
 
   &__item {
     @include position-flex(row, center, flex-start);
@@ -126,6 +322,17 @@
     @include position-flex(row, center, space-between);
     @include size-custom(100%, auto);
     @include margin(20px, 0, 20px, 0);
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include size-max(400px, false);
+    }
+  }
+
+  &__submit {
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include size-max(320px, false);
+      @include size-custom(320px, false);
+    }
   }
 
   &__like {
@@ -149,5 +356,8 @@
     @include padding(15px, 20px, 15px, 20px);
     @include margin(10px, 0, 10px, 0);
     @include border(all, 2px, solid, map_get($grey-scale-colors, grey-500));
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include size-max(320px, false);
+    }
   }
 }

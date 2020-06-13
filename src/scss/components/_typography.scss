@@ -20,6 +20,12 @@
 
     line-height: px-to-rem(27px);
   }
+
+  &--fourth {
+    @include font-structure(map_get($font-family, semi-bold), px-to-rem(15px), 300);
+
+    line-height: px-to-rem(27px);
+  }
 }
 
 .t-structure-xl {

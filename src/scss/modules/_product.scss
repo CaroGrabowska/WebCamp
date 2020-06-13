@@ -5,7 +5,7 @@
 .product {
   @include position-flex(column, center, center);
   @include size-custom(100%, auto);
-  @include margin(60px, auto, 60px, auto);
+  @include margin(100px, auto, 60px, auto);
 
   @include media-query(min, map_get($breakpoints, lg)) {
     @include margin(60px, auto, 80px, auto);

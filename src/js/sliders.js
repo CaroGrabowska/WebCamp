@@ -1,3 +1,25 @@
+//SINGLE PRODUCT SLIDER
+
+const singleProductSlider = {
+  container: document.querySelector('.js-swiper-slider-single-product'),
+  navigation: {
+    next: document.querySelector('.js-swiper-slider-single-product__next'),
+    prev: document.querySelector('.js-swiper-slider-single-product__prev'),
+  },
+};
+
+const singleProductSliderConfig = {
+  clickableState: true,
+  slidesPerView: 1,
+  loop: true,
+  navigation: {
+    nextEl: singleProductSlider.navigation.next,
+    prevEl: singleProductSlider.navigation.prev,
+  },
+};
+
+const singleProductSwiper = new Swiper(singleProductSlider.container, singleProductSliderConfig);
+
 //ACCESORIES SLIDER
 
 const accessoriesSlider = {
