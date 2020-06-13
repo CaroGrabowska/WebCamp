@@ -1,3 +1,37 @@
+//ACCESORIES SLIDER
+
+const accessoriesSlider = {
+  container: document.querySelector('.js-swiper-slider-accesories'),
+  navigation: {
+    next: document.querySelector('.js-swiper-slider-accesories__next'),
+    prev: document.querySelector('.js-swiper-slider-accesories__prev'),
+  },
+};
+
+const accessoriesSliderConfig = {
+  clickableState: true,
+  slidesPerView: 'auto',
+  loop: true,
+  navigation: {
+    nextEl: accessoriesSlider.navigation.next,
+    prevEl: accessoriesSlider.navigation.prev,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 2,
+    },
+  },
+};
+
+const accessoriesSwiper = new Swiper(accessoriesSlider.container, accessoriesSliderConfig);
+
 //PRODUCTS SLIDER
 
 const productsSlider = {
@@ -32,7 +66,6 @@ const productsSliderConfig = {
 };
 
 const productsSwiper = new Swiper(productsSlider.container, productsSliderConfig);
-
 
 //BRANDS SLIDER
 

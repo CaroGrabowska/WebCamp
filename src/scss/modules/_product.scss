@@ -5,35 +5,124 @@
 .product {
   @include position-flex(column, center, center);
   @include size-custom(100%, auto);
+  @include margin(60px, auto, 60px, auto);
+
+  @include media-query(min, map_get($breakpoints, lg)) {
+    @include margin(60px, auto, 80px, auto);
+  }
+
+  &__cart {
+    @include size-custom(100%, 200px);
+  }
 
   &__description {
-    @include position-flex(row, center, center);
+    position: relative;
+    @include position-flex(column, center, center);
     @include size-custom(100%, auto);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(row, center, center);
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      &:before {
+        @include pseudo-elements('', block, absolute, 0, 100%, false, false);
+        @include size-custom(calc((100vw - 1280px) / 2), 100%);
+        @include background-color(map_get($grey-scale-colors, grey-100));
+      }
+    }
+
+    @include media-query(min, map_get($breakpoints, extra-xl)) {
+      &:before {
+        @include pseudo-elements('', block, absolute, 0, 100%, false, false);
+        @include size-custom(calc((100vw - 1640px) / 2), 100%);
+        @include background-color(map_get($grey-scale-colors, grey-100));
+      }
+    }
   }
 }
 
 .description {
-  @include position-flex(column, center, center);
   @include size-custom(100%, auto);
 
+  @include media-query(min, map_get($breakpoints, lg)) {
+    @include size-custom(100%, 800px);
+  }
+
   &__content {
-    @include padding(20px, 0, 20px, 0);
     @include background-color(map_get($grey-scale-colors, grey-100));
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include size-custom(35%, 100%);
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include size-custom(30%, 100%);
+    }
   }
 
   &__gallery {
+    @include size-custom(100%, auto);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(column, center, space-between);
+      @include size-custom(65%, 100%);
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include size-custom(70%, 100%);
+    }
   }
 }
 
 .gallery {
   @include position-flex(column, center, center);
-  @include size-custom(100%, auto);
+
+  @include media-query(min, map_get($breakpoints, lg)) {
+    @include position-flex(column, center, space-around);
+  }
+
   &__product {
     @include position-flex(column, center, center);
     @include size-custom(100%, auto);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include position-flex(row, center, space-around);
+    }
+  }
+
+  &__accesories {
+    @include position-flex(column, flex-start, flex-start);
+    @include size-custom(100%, auto);
+
+    .benefits__title {
+      @include media-query(min, map_get($breakpoints, lg)) {
+        @include margin(20px, 0, 30px, 20px);
+      }
+
+      @include media-query(min, map_get($breakpoints, xl)) {
+        @include margin(40px, 0, 40px, 50px);
+      }
+
+      @include media-query(min, map_get($breakpoints, extra-xl)) {
+        @include margin(50px, 0, 50px, 100px);
+      }
+    }
   }
 
   &__img {
-    @include size-max(300px, auto);
+    @include size-custom(300px, auto);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include size-custom(300px, 300px);
+    }
+
+    @include media-query(min, map_get($breakpoints, xl)) {
+      @include size-custom(400px, 400px);
+    }
+
+    @include media-query(min, map_get($breakpoints, extra-xl)) {
+      @include size-custom(500px, 500px);
+    }
   }
 }

@@ -10,13 +10,580 @@
   </head>
 
   <body>
-    <section class="product">
+    <header class="header position-sticky">
+      <div class="header__navigation navigation">
+        <div class="navigation__top">
+          <div class="nav-logo">
+            <img class="nav-logo__img" src="images/logo.png" alt="Shop logo" />
+          </div>
+          <div class="search">
+            <input class="search__input" type="text" placeholder="Wpisz czego szukasz" />
+            <button class="search__button">
+              <img class="search__logo" src="images/search.svg" alt="Shop logo" />
+            </button>
+          </div>
+          <div class="toolbar">
+            <a class="toolbar__link toolbar__link--phone" href="tel:+48786818322" title="Likes">
+              <img class="toolbar__img phone__img" src="images/phone-mobile.svg" alt="Like logo" />
+            </a>
+            <a class="toolbar__link toolbar__link--account" href="#" title="Likes">
+              <img class="toolbar__img account__img" src="images/person.svg" alt="Like logo" />
+            </a>
+            <a class="toolbar__link toolbar__link--like" href="#" title="Likes">
+              <img class="toolbar__img like__img" src="images/heart.svg" alt="Like logo" />
+            </a>
+            <button class="toolbar__link toolbar__link--basket">
+              <img class="toolbar__img basket__img" src="images/basket.svg" alt="Basket logo" />
+              <span class="toolbar__content">
+                <span class="toolbar__title">koszyk</span>
+                <span class="toolbar__amount">225,00 ZŁ</span>
+              </span>
+              <img class="toolbar__arrow" src="images/arrow-right.png" alt="Arrow" />
+            </button>
+            <button class="toolbar__link toolbar__link--lang">
+              <img class="toolbar__img lang__img" src="images/lang.png" alt="Lang logo" />
+              <img class="toolbar__arrow" src="images/arrow-down.png" alt="Arrow" />
+            </button>
+          </div>
+          <button class="hamburger js-mobile-toogler-emitter">
+            <img class="hamburger__img" src="images/hamburger.svg" alt="Basket logo" />
+          </button>
+        </div>
+      </div>
+      <div class="header__widget widget">
+        <div class="widget__sale js-widget-sale">
+          <div class="t-structure-sm--tertiary t-skin--secondary t-transform--uppercase t-spacing--200 t-position--center">-20% na całą kolekcję zimową!</div>
+        </div>
+        <div class="widget__information information">
+          <div class="information__item">
+            <img class="information__img" src="images/delivery_1.png" alt="Delivery" />
+            <span class="information__content">darmowa dostawa</span>
+          </div>
+          <div class="information__item">
+            <img class="information__img" src="images/delivery_2.png" alt="Delivery" />
+            <span class="information__content">30 dni na zwrot</span>
+          </div>
+          <div class="information__item">
+            <img class="information__img" src="images/delivery_3.png" alt="Delivery" />
+            <span class="information__content">10% na pierwsze zakupy</span>
+          </div>
+        </div>
+      </div>
+      <nav class="header__nav nav js-mobile-toogler-adapter">
+        <ul class="nav__main main-list main-list--lg-relative js-main-menu" data-menu-active="true" data-submenu-active="false">
+          <li class="main-list__item">
+            <a class="main-list__link js-menu-parent" title="Damskie" data-parent="false">Damskie </a>
+            <ul class="main-list main-list--lg-absolute js-menu-child" data-child="false">
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Botki i kozaki" data-subparent="false">Botki i kozaki</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Botki i kozaki">Botki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Glany">Glany</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Kowbojki">Kowbojki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Muszkieterki">Muszkieterki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Oficerki">Oficerki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Śniegowce">Śniegowce</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Sztyblety">Sztyblety</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Trekkingi i traper">Trekkingi i traper</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Klapki i sandały" data-subparent="false">Klapki i sandały</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Klapki">Klapki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Glany">Glany</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Półbuty" data-subparent="false">Półbuty</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Baleriny">Baleriny</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Czółenka">Czółenka</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Espadryle">Espadryle</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Lordsy">Lordsy</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Mokasyny">Mokasyny</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Na koturnie">Na koturnie</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Na obcasie">Na obcasie</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Oxfordy">Oxfordy</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Płaskie">Płaskie</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Sneakersy">Sneakersy</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Trampki">Trampki</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Marki" data-subparent="false">Marki</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Nessi">Nessi</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Tamaris">Tamaris</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Gino rossi">Gino rossi</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Carinii">Carinii</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Karino">Karino</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Nessi">Nessi</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Tamaris">Tamaris</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__banner" href="#" title="Banner reklamowy" data-non-subparent="true">Banner reklamowy</a>
+                <div class="main-list__banner--items">
+                  <a class="main-list__link" href="#" title="Nowości" data-non-subparent="true">Nowości</a>
+                  <a class="main-list__link" href="#" title="Wyprzedaż" data-non-subparent="true">Wyprzedaż</a>
+                  <a class="main-list__link" href="#" title="Bestsellery" data-non-subparent="true">Bestsellery</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link js-menu-parent" href="#" title="Męskie" data-parent="false">Męskie</a>
+            <ul class="main-list main-list--lg-absolute js-menu-child" data-child="false">
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Botki i kozaki" data-subparent="false">Botki i kozaki</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Botki i kozaki">Botki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Glany">Glany</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Kowbojki">Kowbojki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Muszkieterki">Muszkieterki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Oficerki">Oficerki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Śniegowce">Śniegowce</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Sztyblety">Sztyblety</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Trekkingi i traper">Trekkingi i traper</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Klapki i sandały" data-subparent="false">Klapki i sandały</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Klapki">Klapki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Glany">Glany</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Półbuty" data-subparent="false">Półbuty</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Baleriny">Baleriny</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Czółenka">Czółenka</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Espadryle">Espadryle</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Lordsy">Lordsy</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Mokasyny">Mokasyny</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Na koturnie">Na koturnie</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Na obcasie">Na obcasie</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Oxfordy">Oxfordy</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Płaskie">Płaskie</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Sneakersy">Sneakersy</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Trampki">Trampki</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Marki" data-subparent="false">Marki</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Nessi">Nessi</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Tamaris">Tamaris</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Gino rossi">Gino rossi</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Carinii">Carinii</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Karino">Karino</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Nessi">Nessi</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Tamaris">Tamaris</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__banner" href="#" title="Banner reklamowy" data-non-subparent="true">Banner reklamowy</a>
+                <div class="main-list__banner--items">
+                  <a class="main-list__link" href="#" title="Nowości" data-non-subparent="true">Nowości</a>
+                  <a class="main-list__link" href="#" title="Wyprzedaż" data-non-subparent="true">Wyprzedaż</a>
+                  <a class="main-list__link" href="#" title="Bestsellery" data-non-subparent="true">Bestsellery</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link js-menu-parent" href="#" title="Torebki" data-parent="false">Torebki</a>
+            <ul class="main-list main-list--lg-absolute js-menu-child" data-child="false">
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Botki i kozaki" data-subparent="false">Botki i kozaki</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Botki i kozaki">Botki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Glany">Glany</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Kowbojki">Kowbojki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Muszkieterki">Muszkieterki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Oficerki">Oficerki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Śniegowce">Śniegowce</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Sztyblety">Sztyblety</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Trekkingi i traper">Trekkingi i traper</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Klapki i sandały" data-subparent="false">Klapki i sandały</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Klapki">Klapki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Glany">Glany</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Półbuty" data-subparent="false">Półbuty</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Baleriny">Baleriny</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Czółenka">Czółenka</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Espadryle">Espadryle</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Lordsy">Lordsy</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Mokasyny">Mokasyny</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Na koturnie">Na koturnie</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Na obcasie">Na obcasie</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Oxfordy">Oxfordy</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Płaskie">Płaskie</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Sneakersy">Sneakersy</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Trampki">Trampki</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Marki" data-subparent="false">Marki</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Nessi">Nessi</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Tamaris">Tamaris</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Gino rossi">Gino rossi</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Carinii">Carinii</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Karino">Karino</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Nessi">Nessi</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Tamaris">Tamaris</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__banner" href="#" title="Banner reklamowy" data-non-subparent="true">Banner reklamowy</a>
+                <div class="main-list__banner--items">
+                  <a class="main-list__link" href="#" title="Nowości" data-non-subparent="true">Nowości</a>
+                  <a class="main-list__link" href="#" title="Wyprzedaż" data-non-subparent="true">Wyprzedaż</a>
+                  <a class="main-list__link" href="#" title="Bestsellery" data-non-subparent="true">Bestsellery</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link js-menu-parent" href="#" title="Akcesoria" data-parent="false">Akcesoria</a>
+            <ul class="main-list main-list--lg-absolute js-menu-child" data-child="false">
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Botki i kozaki" data-subparent="false">Botki i kozaki</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Botki i kozaki">Botki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Glany">Glany</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Kowbojki">Kowbojki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Muszkieterki">Muszkieterki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Oficerki">Oficerki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Śniegowce">Śniegowce</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Sztyblety">Sztyblety</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Trekkingi i traper">Trekkingi i traper</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Klapki i sandały" data-subparent="false">Klapki i sandały</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Klapki">Klapki</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Glany">Glany</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Półbuty" data-subparent="false">Półbuty</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Baleriny">Baleriny</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Czółenka">Czółenka</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Espadryle">Espadryle</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Lordsy">Lordsy</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Mokasyny">Mokasyny</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Na koturnie">Na koturnie</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Na obcasie">Na obcasie</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Oxfordy">Oxfordy</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Płaskie">Płaskie</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Sneakersy">Sneakersy</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Trampki">Trampki</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__link js-submenu-parent" href="#" title="Marki" data-subparent="false">Marki</a>
+                <ul class="main-list js-submenu-child" data-subchild="false">
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Nessi">Nessi</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Tamaris">Tamaris</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Gino rossi">Gino rossi</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Carinii">Carinii</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Karino">Karino</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Nessi">Nessi</a>
+                  </li>
+                  <li class="main-list__item">
+                    <a class="main-list__link" href="#" title="Tamaris">Tamaris</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-list__item">
+                <a class="main-list__banner" href="#" title="Banner reklamowy" data-non-subparent="true">Banner reklamowy</a>
+                <div class="main-list__banner--items">
+                  <a class="main-list__link" href="#" title="Nowości" data-non-subparent="true">Nowości</a>
+                  <a class="main-list__link" href="#" title="Wyprzedaż" data-non-subparent="true">Wyprzedaż</a>
+                  <a class="main-list__link" href="#" title="Bestsellery" data-non-subparent="true">Bestsellery</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link" href="#" title="Premium" data-non-parent="true">Premium</a>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link" href="#" title="Marki" data-non-parent="true">Marki</a>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link" href="#" title="Nowości" data-non-parent="true">Nowości</a>
+          </li>
+          <li class="main-list__item">
+            <a class="main-list__link main-list__link--sold" href="#" title="Wyprzedarze" data-non-parent="true">Wyprzedarze</a>
+          </li>
+          <li class="main-list__item--toolbar">
+            <a class="main-list__link--toolbar" href="#" title="Zaloguj się"> <img class="main-list__img--toolbar" src="images/person.svg" alt="Person" />Zaloguj się</a>
+          </li>
+          <li class="main-list__item--toolbar">
+            <a class="main-list__link--toolbar" href="#" title="Zarejestruj"> <img class="main-list__img--toolbar" src="images/lock.svg" alt="Lock" />Zarejestruj</a>
+          </li>
+          <li class="main-list__item--toolbar">
+            <a class="main-list__link--toolbar" href="#" title="Status"> <img class="main-list__img--toolbar" src="images/globe.svg" alt="Globe" />Sprawdź status zamówienia</a>
+          </li>
+          <li class="main-list__item--toolbar">
+            <a class="main-list__link--toolbar" href="tel:+48786818322" title="Tel"> <img class="main-list__img--toolbar" src="images/phone.svg" alt="Phone" />+48 786818322</a>
+          </li>
+          <li class="main-list__item--toolbar">
+            <a class="main-list__link--toolbar" href="mailto:info@adarmo.pl" title="Email"> <img class="main-list__img--toolbar" src="images/mailing.svg" alt="Mail" />info@adarmo.pl</a>
+          </li>
+          <li class="main-list__item--toolbar">
+            <a class="main-list__link--toolbar total" href="#" title="Total">
+              <img class="main-list__img--toolbar" src="images/lang.png" alt="Lang" />
+              <span class="total__price">0,00 zł</span>
+              <span class="total__link">0,00 zł</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__overlay js-mobile-overlay"></div>
+    </header>
+    <section class="product wc-container">
       <div class="product__cart"></div>
       <div class="product__description description">
         <div class="description__content table">
           <div class="table__row">
             <div class="table__key">Producent</div>
-            <div class="table__value table__value--primary">Karino</div>
+            <div class="table__value--primary">Karino</div>
           </div>
           <div class="table__row">
             <div class="table__key">Gwarancja</div>
@@ -80,27 +647,56 @@
                   <div class="slider__single slider__single--accesories swiper-slide">
                     <a class="slider__link" href="#" title="">
                       <img class="slider__img" src="images/Accesories-1.png" alt="Product" />
-                      <div class="slider__heading">Botki KARINO</div>
-                      <div class="slider__description">3019/076-F czarny</div>
-                      <div class="slider__prices">
-                        <div class="slider__prices--normal">289,00 ZŁ</div>
+                      <div class="slider__content">
+                        <div class="slider__heading">Botki KARINO</div>
+                        <div class="slider__description">3019/076-F czarny</div>
+                        <div class="slider__prices">
+                          <div class="slider__prices--normal">289,00 ZŁ</div>
+                        </div>
                       </div>
                     </a>
                   </div>
                   <div class="slider__single slider__single--accesories swiper-slide">
                     <a class="slider__link" href="#" title="">
-                      <img class="slider__img" src="images/Accesories-2.png" alt="Product" />
-                      <div class="slider__heading">Botki KARINO</div>
-                      <div class="slider__description">3019/076-F czarny</div>
-                      <div class="slider__prices">
-                        <div class="slider__prices--sale">289,00 ZŁ</div>
-                        <div class="slider__prices--old">289,00 ZŁ</div>
+                      <img class="slider__img" src="images/Accesories-1.png" alt="Product" />
+                      <div class="slider__content">
+                        <div class="slider__heading">Botki KARINO</div>
+                        <div class="slider__description">3019/076-F czarny</div>
+                        <div class="slider__prices">
+                          <div class="slider__prices--sale">289,00 ZŁ</div>
+                          <div class="slider__prices--old">289,00 ZŁ</div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__single slider__single--accesories swiper-slide">
+                    <a class="slider__link" href="#" title="">
+                      <img class="slider__img" src="images/Accesories-1.png" alt="Product" />
+                      <div class="slider__content">
+                        <div class="slider__heading">Botki KARINO</div>
+                        <div class="slider__description">3019/076-F czarny</div>
+                        <div class="slider__prices">
+                          <div class="slider__prices--sale">289,00 ZŁ</div>
+                          <div class="slider__prices--old">289,00 ZŁ</div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__single slider__single--accesories swiper-slide">
+                    <a class="slider__link" href="#" title="">
+                      <img class="slider__img" src="images/Accesories-1.png" alt="Product" />
+                      <div class="slider__content">
+                        <div class="slider__heading">Botki KARINO</div>
+                        <div class="slider__description">3019/076-F czarny</div>
+                        <div class="slider__prices">
+                          <div class="slider__prices--normal">289,00 ZŁ</div>
+                        </div>
                       </div>
                     </a>
                   </div>
                 </div>
-                <div class="swiper-button-next slider__navigation slider__navigation--products js-swiper-slider-products__next"></div>
-                <div class="swiper-button-prev slider__navigation slider__navigation--products js-swiper-slider-products__prev"></div>
+                <div class="swiper-button-next slider__navigation slider__navigation--products js-swiper-slider-accesories__next"></div>
+                <div class="swiper-button-prev slider__navigation slider__navigation--products js-swiper-slider-accesories__prev"></div>
               </div>
             </div>
           </div>

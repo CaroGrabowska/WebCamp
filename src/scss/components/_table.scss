@@ -3,12 +3,17 @@
 // ===============================
 
 .table {
-  @include position-flex(column, false, false);
+  @include position-flex(column, false, center);
   @include padding(0, 10px, 0, 10px);
 
   &__row {
     @include position-flex(row, false, false);
-    @include padding(5px, 0, 5px, 0);
+    @include padding(10px, 10px, 10px, 10px);
+
+    @include media-query(min, map_get($breakpoints, extra-xl)) {
+      @include size-max(80%, false);
+      @include margin(0, 0, 0, 50px);
+    }
   }
 
   &__key {
@@ -21,13 +26,28 @@
     @include size-custom(50%, auto);
     @include font-structure(map_get($font-family, normal), px-to-rem(15px), 300);
     @include font-skin(map_get($black-scale-colors, black-100), false, false);
+
+    &--primary {
+      @include size-custom(50%, auto);
+      @include font-structure(map_get($font-family, semi-bold), px-to-rem(15px), 700);
+      @include font-skin(map_get($red-scale-colors, red-100), false, false);
+    }
   }
 
   &__description {
-    @include padding(15px, 0, 15px, 0);
+    @include padding(15px, 10px, 15px, 10px);
     @include font-structure(map_get($font-family, normal), px-to-rem(15px), 300);
     @include font-skin(map_get($black-scale-colors, black-100), false, false);
 
     line-height: px-to-rem(25px);
+
+    @include media-query(min, map_get($breakpoints, lg)) {
+      @include margin(60px, 0, 0, 0);
+    }
+
+    @include media-query(min, map_get($breakpoints, extra-xl)) {
+      @include size-max(80%, false);
+      @include margin(60px, 0, 0, 50px);
+    }
   }
 }
