@@ -1,0 +1,153 @@
+// ===============================
+// #SINGLE PRODUCT
+// ===============================
+
+.single-product {
+  @include position-flex(column, center, center);
+  @include size-custom(100%, auto);
+
+  &__price {
+    @include position-flex(column, false, false);
+    @include size-custom(100%, auto);
+    @include margin(15px, 0, 20px, 0);
+
+    .price-normal {
+      @include font-structure(map_get($font-family, bold), px-to-rem(30px), 900);
+      @include font-skin(map_get($red-scale-colors, red-100), false, false);
+    }
+
+    .price-subnormal {
+      @include position-flex(row, center, false);
+      @include margin(5px, 0, 5px, 0);
+    }
+
+    .price-sale {
+      @include font-structure(map_get($font-family, regular), px-to-rem(20px), 400);
+      @include font-skin(map_get($grey-scale-colors, grey-500), false, false);
+      text-decoration: line-through;
+    }
+
+    .price-description {
+      @include margin(0, 15px, 0, 15px);
+      @include font-structure(map_get($font-family, regular), px-to-rem(13px), 400);
+      @include font-skin(map_get($black-scale-colors, black-100), false, false);
+    }
+  }
+
+  &__add-to-card {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, auto);
+  }
+
+  &__slider {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, auto);
+  }
+
+  &__order {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, auto);
+    @include padding(10px, 10px, 10px, 10px);
+  }
+
+  &__more-products {
+    @include position-flex(column, center, center);
+    @include size-custom(100%, auto);
+    @include margin(20px, auto, 20px, auto);
+  }
+}
+
+.more-products {
+  &__link {
+    position: relative;
+    @include margin(10px, auto, 10px, auto);
+
+    &:after {
+      @include pseudo-elements(url('../../../images/arrow.png'), block, absolute, 0, false, false, 105%);
+      @include size-custom(10px, 10px);
+    }
+  }
+}
+
+.availability {
+  @include position-flex(column, center, center);
+  @include size-custom(100%, auto);
+
+  &__container {
+    @include position-flex(row, center, center);
+    @include size-custom(100%, auto);
+    @include margin(20px, 0, 40px, 0);
+  }
+
+  &__item {
+    @include position-flex(column, center, center);
+    @include size-custom(50%, auto);
+    @include size-max(120px, auto);
+  }
+
+  &__img {
+    @include size-custom(68px, 68px);
+  }
+
+  &__title {
+    @include margin(10px, 0, 10px, 0);
+    @include font-structure(map_get($font-family, regular), px-to-rem(13px), 400);
+    @include font-skin(map_get($black-scale-colors, black-100), false, false);
+  }
+}
+
+.delivery {
+  @include position-flex(column, false, false);
+  @include size-custom(100%, auto);
+  @include margin(5px, 0, 5px, 0);
+
+  &__item {
+    @include position-flex(row, center, flex-start);
+    @include size-custom(100%, auto);
+  }
+
+  &__img {
+    @include size-custom(25px, 20px);
+    @include margin(0, 15px, 0, 0);
+  }
+
+  &__title {
+    @include margin(10px, 0, 10px, 0);
+    @include font-structure(map_get($font-family, regular), px-to-rem(13px), 400);
+    @include font-skin(map_get($black-scale-colors, black-100), false, false);
+  }
+}
+
+.form {
+  @include position-flex(column, false, false);
+  @include size-custom(100%, auto);
+
+  &__add-to-card {
+    @include position-flex(row, center, space-between);
+    @include size-custom(100%, auto);
+    @include margin(20px, 0, 20px, 0);
+  }
+
+  &__like {
+    @include size-custom(20px, 20px);
+
+    &--link {
+      @include position-flex(column, false, false);
+      @include margin(0, auto, 0, auto);
+    }
+  }
+
+  &__link {
+    @include margin(10px, 0, 10px, 0);
+    @include font-structure(map_get($font-family, regular), px-to-rem(13px), 400);
+    @include font-skin(map_get($black-scale-colors, black-100), false, false);
+
+    text-decoration: underline !important;
+  }
+
+  &__select {
+    @include padding(15px, 20px, 15px, 20px);
+    @include margin(10px, 0, 10px, 0);
+    @include border(all, 2px, solid, map_get($grey-scale-colors, grey-500));
+  }
+}

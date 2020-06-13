@@ -16,7 +16,7 @@
   }
 
   &--tertiary {
-    @include font-structure(map_get($font-family, semi-bold), px-to-rem(15px), 400);
+    @include font-structure(map_get($font-family, semi-bold), px-to-rem(20px), 400);
 
     line-height: px-to-rem(27px);
   }

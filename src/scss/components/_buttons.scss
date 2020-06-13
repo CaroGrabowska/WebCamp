@@ -11,6 +11,13 @@
     @include font-skin(map_get($white-scale-colors, white-100), 0.8px, uppercase);
     @include transition(all, 0.3s, ease-in-out);
   }
+
+  &--secondary {
+    @include background-color(map_get($black-scale-colors, black-200));
+    @include font-structure(map_get($font-family, bold), px-to-rem(15px), 700);
+    @include font-skin(map_get($white-scale-colors, white-100), 0.8px, uppercase);
+    @include transition(all, 0.3s, ease-in-out);
+  }
 }
 
 .button-structure {
@@ -18,4 +25,8 @@
   @include padding(10px, 30px, 10px, 30px);
 
   cursor: pointer;
+
+  &--secondary {
+    @include padding(20px, 50px, 20px, 50px);
+  }
 }

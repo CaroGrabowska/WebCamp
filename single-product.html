@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <header class="header position-sticky">
+    <!-- <header class="header position-sticky">
       <div class="header__navigation navigation">
         <div class="navigation__top">
           <div class="nav-logo">
@@ -576,9 +576,71 @@
         </ul>
       </nav>
       <div class="header__overlay js-mobile-overlay"></div>
-    </header>
+    </header> -->
     <section class="product wc-container">
-      <div class="product__cart"></div>
+      <div class="product__cart single-product">
+        <div class="single-product__slider"></div>
+        <div class="single-product__order">
+          <div class="single-product__price">
+            <div class="price-normal">289,00 ZŁ</div>
+            <div class="price-subnormal">
+              <div class="price-sale">321,00 zł</div>
+              <div class="price-description">Oszczędzasz 10% (22,56 zł)</div>
+            </div>
+            <div class="delivery">
+              <div class="delivery__item">
+                <img class="delivery__img" src="images/timer.svg" alt="Delivery product" />
+                <span class="delivery__title">Zamów dziś, wyślemy w czwartek 12.02</span>
+              </div>
+            </div>
+          </div>
+          <div class="single-product__add-to-card">
+            <form method="POST" action="#" class="form">
+              <select class="form__select"">
+                <option>Rozmiar 38</option>
+              </select>
+              <a class="form__link">Tabela rozmiarów</a>
+              <div class="form__add-to-card">
+                <button class="form__submit button-structure button-structure--secondary button-skin button-skin--secondary" type="submit" value="Dodaj do koszyka">Dodaj do koszyka</button>
+                 <a class="form__like--link" href="#" title="Likes">
+                  <img class="form__like" src="images/heart.svg" alt="Like product" />
+                  </a>
+              </div>
+            </form>
+          </div>
+          <div class="single-product__delivery delivery">
+            <div class="delivery__item">
+              <img class="delivery__img" src="images/delivery-truck.svg" alt="Delivery product" />
+              <span class="delivery__title">Darmowa dostawa</span>
+            </div>
+            <div class="delivery__item">
+              <img class="delivery__img" src="images/return.svg" alt="Delivery product" />
+              <span class="delivery__title">30 dni na zwrot</span>
+            </div>
+            <div class="delivery__item">
+              <img class="delivery__img" src="images/phone-mobile.svg" alt="Delivery product" />
+              <span class="delivery__title">Zamów telefonicznie | +48 786818322</span>
+            </div>
+          </div>
+          <div class="single-product__availability availability">
+            <h4 class="benefits__title t-structure-sm--tertiary t-structure-xl--secondary t-skin--primary t-transform--uppercase t-spacing--100 t-position--center">dostępne kolory</h4>
+            <div class="availability__container">
+              <div class="availability__item">
+                <img class="availability__img" src="images/available.png" alt="Availability product" />
+                <span class="availability__title">Czarny</span>
+              </div>
+              <div class="availability__item">
+                <img class="availability__img" src="images/available.png" alt="Availability product" />
+                <span class="availability__title">Brązowy</span>
+              </div>
+            </div>
+          </div>
+          <div class="single-product__more-products more-products">
+            <img class="more-products__img" src="images/more-products.png" alt="More product" />
+            <a class="more-products__link" href="#" title="More product link">Zobacz inne produkty</a>
+          </div>
+        </div>
+      </div>
       <div class="product__description description">
         <div class="description__content table">
           <div class="table__row">
