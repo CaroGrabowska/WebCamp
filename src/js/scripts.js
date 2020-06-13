@@ -38,9 +38,9 @@
 
       menu.parents.forEach((menuitem) =>
         menuitem.addEventListener('click', function () {
-         setMainDataState(menu, 'data-menu-active');
-         setParentDataState(this, menu, 'data-parent');
-         setClosestChildDataState(this, menu, 'data-child');
+          setMainDataState(menu, 'data-menu-active');
+          setParentDataState(this, menu, 'data-parent');
+          setClosestChildDataState(this, menu, 'data-child');
         })
       );
 
@@ -52,7 +52,7 @@
         })
       );
 
-      function setMainDataState(menuObj,attrName) {
+      function setMainDataState(menuObj, attrName) {
         let currentMenu = menu.main;
         let currentMenuDataAttr = currentMenu.getAttribute(attrName);
         let dataAttrToSet = currentMenuDataAttr === 'false' ? 'true' : 'false';
@@ -73,21 +73,21 @@
         closestChild.setAttribute(menuObj.childAttr, dataAttrToSet);
       }
 
-      function resetElementsAttr(menuType){
+      function resetElementsAttr(menuType) {
         menuType.parents.forEach((item) => {
           item.setAttribute(menuType.parentAttr, 'false');
         });
 
         const elChildren = document.querySelectorAll(menuType.child);
-          elChildren.forEach((item) => {
-            item.setAttribute(menuType.childAttr, 'false');
-          });
-       }
+        elChildren.forEach((item) => {
+          item.setAttribute(menuType.childAttr, 'false');
+        });
+      }
 
-       function resetMainAttr(menuMain, menuSub) {
-         menuMain.main.setAttribute(menuMain.mainAttr, 'true');
-         menuSub.main.setAttribute(menuSub.mainAttr, 'false');
-       }
+      function resetMainAttr(menuMain, menuSub) {
+        menuMain.main.setAttribute(menuMain.mainAttr, 'true');
+        menuSub.main.setAttribute(menuSub.mainAttr, 'false');
+      }
 
       //MOBILE MENU LIST
       const toggleMenuMobile = {
@@ -135,9 +135,20 @@
             let absorber = emitter.parentElement.querySelector(toggle.absorber);
 
             absorber.classList.toggle(toggle.class);
+
+            toggleHiddenElements(e.target);
           }
         })
       );
+
+      function toggleHiddenElements(el) {
+        const mapAbsorbers = [...toggle.emitterEl].filter((item) => item !== el);
+
+        mapAbsorbers.forEach((mapAbsorber) => {
+          let absorber = mapAbsorber.parentElement.querySelector(toggle.absorber);
+          absorber.classList.add(toggle.class);
+        });
+      }
     },
     false
   );

@@ -4,7 +4,7 @@
 
 .t-structure-sm {
   &--primary {
-    @include font-structure(map_get($font-family, semi-bold), px-to-rem(20px), 500);
+    @include font-structure(map_get($font-family, semi-bold), px-to-rem(20px), 300);
 
     line-height: px-to-rem(25px);
   }
@@ -16,7 +16,7 @@
   }
 
   &--tertiary {
-    @include font-structure(map_get($font-family, semi-bold), px-to-rem(15px), 300);
+    @include font-structure(map_get($font-family, semi-bold), px-to-rem(15px), 400);
 
     line-height: px-to-rem(27px);
   }
@@ -57,7 +57,7 @@
 
 .t-spacing {
   &--100 {
-    letter-spacing: 5px;
+    letter-spacing: 4px;
   }
 
   &--200 {

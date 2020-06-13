@@ -101,7 +101,7 @@
 
 .benefits {
   &__title {
-    @include margin(25px, 10px, 25px, 10px);
+    @include margin(25px, 25px, 25px, 25px);
 
     @include media-query(min, map_get($breakpoints, lg)) {
       @include margin(40px, auto, 50px, auto);

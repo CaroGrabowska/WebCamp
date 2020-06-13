@@ -77,10 +77,10 @@
     #{ $self }__link {
       @include position-flex(column, center, center);
       @include size-custom(250px, 300px);
-      @include margin(25px, 0, 25px, 0);
 
       @include media-query(min, map_get($breakpoints, lg)) {
         @include size-custom(350px, 300px);
+        @include margin(25px, 0, 25px, 0);
       }
 
       @include media-query(min, map_get($breakpoints, xl)) {

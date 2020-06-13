@@ -62,11 +62,13 @@
 
     @include media-query(min, map_get($breakpoints, xl)) {
       @include size-custom(500px, 345px);
+      font-size: px-to-rem(25px);
     }
 
     &--items {
       @include media-query(min, map_get($breakpoints, lg)) {
         @include position-flex(row, center, center);
+        @include margin(20px, 0, 0, 0);
 
         a {
           @include font-structure(map_get($font-family, bold), px-to-rem(14px), 900);
@@ -127,7 +129,7 @@
 
   &--lg-absolute {
     @include media-query(min, map_get($breakpoints, lg)) {
-      @include position-flex(row, flex-start, space-around);
+      @include position-flex(row, flex-start, space-between);
       flex-wrap: wrap;
       position: absolute;
       left: 0;
@@ -136,13 +138,25 @@
 
       #{ $self }__item {
         @include size-custom(auto, auto);
-        @include margin(10px, 10px, 10px, 10px);
+        @include margin(0, 10px, 0, 10px);
       }
     }
 
     @include media-query(min, map_get($breakpoints, xl)) {
       @include padding(20px, 0, 20px, 0);
-      width: 1280px;
+      @include size-custom(1280px, false);
+
+      &:before {
+        @include pseudo-elements('', block, absolute, 0, 100%, false, false);
+        @include size-custom(calc((100vw - 1280px) / 2), 100%);
+        @include background-color(map_get($white-scale-colors, white-100));
+      }
+
+      &:after {
+        @include pseudo-elements('', block, absolute, 0, false, false, 100%);
+        @include size-custom(calc((100vw - 1280px) / 2), 100%);
+        @include background-color(map_get($white-scale-colors, white-100));
+      }
     }
 
     @include media-query(min, map_get($breakpoints, extra-xl)) {
@@ -169,8 +183,8 @@
     @include position-flex(column, flex-start, flex-start);
 
     .main-list__link {
-      @include padding(10px, 10px, 10px, 5px);
-      @include font-structure(map_get($font-family, regular), px-to-rem(13px), 300);
+      @include padding(8px, 5px, 8px, 5px);
+      @include font-structure(map_get($font-family, regular), px-to-rem(13px), 500);
       @include font-skin(map_get($black-scale-colors, black-100), false, false);
 
       text-transform: capitalize;
@@ -185,7 +199,7 @@
 .js-submenu-parent {
   @include media-query(min, map_get($breakpoints, lg)) {
     @include position-flex(column, flex-start, flex-start);
-    @include padding(5px, 5px, 5px, 5px);
+    @include padding(15px, 5px, 15px, 5px);
     @include font-structure(map_get($font-family, bold), px-to-rem(14px), 900);
     @include font-skin(map_get($black-scale-colors, black-100), false, false);
   }
